@@ -16,6 +16,13 @@ import { ButtonComponent } from './components/button/button.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { TooltipDirective } from './directives/tooltip.directive';
+import { RedditComponent } from './components/home/reddit/reddit.component';
+import { HeaderComponent } from './components/home/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { InputComponent } from './components/input/input.component';
+import { UsernameComponent } from './components/home/username/username.component';
+import { NavbarComponent } from './components/home/navbar/navbar.component';
+import { UpvotesComponent } from './components/upvotes/upvotes.component';
 
 
 @NgModule({
@@ -32,6 +39,13 @@ import { TooltipDirective } from './directives/tooltip.directive';
     LogoComponent,
     CustomDatePipe,
     TooltipDirective,
+    RedditComponent,
+    HeaderComponent,
+    SearchComponent,
+    InputComponent,
+    UsernameComponent,
+    NavbarComponent,
+    UpvotesComponent,
   ],
   imports: [
     BrowserModule,

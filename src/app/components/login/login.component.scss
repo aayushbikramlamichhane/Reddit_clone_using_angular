@@ -42,9 +42,11 @@
       .input-container {
         display: flex;
         flex-direction: column;
-        height: 25%;
+        gap: 5px;
+        // height: 25%;
         .input-element {
-          height: 1.8rem;
+          height: 2rem;
+          padding-left: 5px;
           border: none;
           border-radius: 5px;
           outline: 1px solid black;

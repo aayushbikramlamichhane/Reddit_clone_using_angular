@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 
 import { inject } from '@angular/core';
-import { AuthServiceService } from '../services/auth-service.service';
+import { loggedIn } from '../storage/local-storage';
 
 export const authGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
@@ -17,7 +17,7 @@ export const authGuard: CanActivateFn = (
   const protectedRoutes: string[] = ['/home', '/feeds'];
 
 
-  const loggedIn = localStorage.getItem('loggedIn');
+  // const loggedIn = localStorage.getItem('loggedIn');
 
 
   if (protectedRoutes.includes(state.url) && !loggedIn) {

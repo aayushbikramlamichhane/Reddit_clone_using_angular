@@ -1,0 +1,15 @@
+.username-container {
+  display: flex;
+  gap: 5px;
+  height: 15px;
+
+  .userlogo {
+    border-radius: 100%;
+    background: rgb(167, 147, 109);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

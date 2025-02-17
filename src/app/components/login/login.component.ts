@@ -6,6 +6,7 @@ import {
 import { Router } from '@angular/router';
 import { routesPath } from 'src/app/constants/route-constants';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { localStorageItem } from 'src/app/storage/local-storage';
 import { customEmailValidator } from 'src/app/validators/email.validators';
 import { customPasswordValidator } from 'src/app/validators/password.validators';
 
@@ -34,7 +35,8 @@ export class LoginComponent {
     this.authService.onLoggedIn();
     let loggedIn = this.authService.checkIfLoggedIn;
     console.log(`isLoggedin: ${this.authService.checkIfLoggedIn}`);
-    localStorage.setItem('loggedIn', JSON.stringify(loggedIn));
+    // localStorage.setItem('loggedIn', JSON.stringify(loggedIn));
+    localStorageItem('loggedIn', loggedIn);
     this.router.navigate([routesPath.HOME]);
   }
 

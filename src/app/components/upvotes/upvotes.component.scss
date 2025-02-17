@@ -1,0 +1,17 @@
+.upvote-container{
+    background: rgb(228, 234, 238);
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border: none;
+    border-radius: 40%;
+    width: 70px;
+    height: 40px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    i{
+        cursor: pointer;
+    }
+}
