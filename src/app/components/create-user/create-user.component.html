@@ -1,0 +1,59 @@
+<div class="register-container">
+  <form [formGroup]="registerFormGroup" (ngSubmit)="onCreate()">
+    <div class="username-input">
+      <label for="username">Username</label>
+      <input type="text" formControlName="username">
+      <span *ngIf="getControl('username')?.invalid && getControl('username')?.touched">
+
+        <span *ngIf="getControl('username')?.hasError('') && getControl('username')?.touched">
+          *Enter a Valid Username
+        </span>
+
+        <span *ngIf="getControl('username')?.errors?.['required']">
+          *Enter a username
+        </span>
+      </span>
+    </div>
+
+    <div class="email-input">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email">
+    </div>
+
+    <div class="password-input">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password">
+    </div>
+
+    <div class="gender-field">
+      <label for="password">Gender:</label>
+
+      <div formArrayName="gender" class="gender-label">
+        <div class="gender-input">
+          <div *ngFor="let item of genders; let i=index">
+            <label for="item">{{item}}</label>
+            <input type="checkbox" value="item">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="occuptaion-field">
+      <label for="occupation">Select Occupation:</label>
+      <select formControlName="occupations">
+        <!-- <option value="teacher">Teacher</option>
+        <option value="engineer">Engineer</option>
+        <option value="coder">Coder</option> -->
+
+        <ng-container *ngFor="let occupation of ocupations">
+          <option [value]="occupation.value">{{occupation.slug}}</option>
+        </ng-container>
+
+      </select>
+    </div>
+
+    <div class="register-button">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthServiceService } from './services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pro';
+
+  constructor(public authServiceService: AuthServiceService,
+    public router: Router
+  ) { }
+
+  get isUserLoggedIn(): boolean {
+    return this.authServiceService.checkIfLoggedIn;
+  }
 }

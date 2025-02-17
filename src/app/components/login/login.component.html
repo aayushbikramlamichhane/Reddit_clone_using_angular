@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="container">
+    <!-- <app-layout style="width: 73%; height: 100%;"> -->
+    <div class="login-image-container">
+      <app-image></app-image>
+    </div>
+
+    <div class="login-container">
+      <app-layout>
+        <!-- <h1>Hello Aayush</h1> -->
+
+        <form [formGroup]="userForm" class="form">
+
+
+          <div class="form-container">
+            <app-logo imgsrc="../../../assets/images/b.png">
+              Login Page
+            </app-logo>
+            <div class="input-container">
+              <label for="email">Email</label>
+              <input type="email" formControlName="email" class="input-element">
+              <div class="error-email" *ngIf="getControl('email')?.invalid && getControl('email')?.touched">
+
+                <span *ngIf="getControl('email')?.hasError('invalidEmail') && getControl('email')?.touched">
+                  *Invalid Email
+                </span>
+
+                <span *ngIf="getControl('email')?.hasError('required')">
+                  *Email is required
+                </span>
+
+              </div>
+            </div>
+
+            <div class="input-container">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" class="input-element">
+              <div class="error-password" *ngIf="getControl('password')?.invalid && getControl('password')?.touched">
+
+                <span *ngIf="getControl('password')?.hasError('invalidPassword') && getControl('password')?.touched">
+                  *Password is weak as you are
+                </span>
+
+                <span *ngIf="getControl('password')?.hasError('required')">
+                  *Password is required
+                </span>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <app-button type="submit" styles="primary" (onClick)="onSubmit()" ayushTooltip="Click to submit">
+                Submit
+              </app-button>
+            </div>
+
+
+            <app-button type="button" styles="secondary" [isDisabled]=false (onClick)="onRegister()">
+              Register
+            </app-button>
+
+          </div>
+        </form>
+      </app-layout>
+    </div>
+  </div>
+</div>
