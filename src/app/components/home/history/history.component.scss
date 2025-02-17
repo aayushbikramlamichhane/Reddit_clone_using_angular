@@ -1,0 +1,26 @@
+@import '../../../../assets/scss/display';
+.history-container{
+    margin: 0.5rem;
+    border: none;
+    background: rgb(228, 234, 238);
+    border-radius: 5px;
+    padding: 10px;
+    color: gray;
+
+    .history-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        .clear{
+            color: blue;
+            cursor: pointer;
+        }
+    }
+
+    .history-content{
+        @include flex-column(column, 10px);
+        .history-footer{
+            @include flex-column(row, 10px);
+        }
+    }
+}

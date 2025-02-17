@@ -1,0 +1,18 @@
+.feeds-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .span-logo {
+    background: rebeccapurple;
+    width: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .span-title {
+    font-size: small;
+    font-weight: bold;
+  }
+}

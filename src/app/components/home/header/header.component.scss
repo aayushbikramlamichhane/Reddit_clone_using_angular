@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/flex";
+
 .reddit-container{
     padding: 11px;
     // border: 1px solid black;
@@ -7,15 +9,17 @@
     justify-content: space-between;
 
     .app-logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        @include display-flex;
     }
 
     .app-username{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        @include display-flex;
     }
 
     .search-component{

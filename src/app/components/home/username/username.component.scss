@@ -1,6 +1,9 @@
+@import '../../../../assets/scss/display';
+@import '../../../../assets/scss/flex';
 .username-container {
-  display: flex;
-  gap: 5px;
+  // display: flex;
+  // gap: 5px;
+  @include flex-column(row, 8px);
   height: 15px;
 
   .userlogo {
@@ -8,8 +11,9 @@
     background: rgb(167, 147, 109);
     width: 20px;
     height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    @include display-flex;
   }
 }

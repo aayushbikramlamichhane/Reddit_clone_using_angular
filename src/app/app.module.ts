@@ -23,6 +23,8 @@ import { InputComponent } from './components/input/input.component';
 import { UsernameComponent } from './components/home/username/username.component';
 import { NavbarComponent } from './components/home/navbar/navbar.component';
 import { UpvotesComponent } from './components/upvotes/upvotes.component';
+import { LogocontentComponent } from './components/logocontent/logocontent.component';
+import { HistoryComponent } from './components/home/history/history.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { UpvotesComponent } from './components/upvotes/upvotes.component';
     UsernameComponent,
     NavbarComponent,
     UpvotesComponent,
+    LogocontentComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,13 @@
+@import '../../../../assets/scss/display';
+
 .reddit-component{
     width: 100%;
-    display: flex;
-    gap: 8px;
+    @include flex-column(row, 8px);
     .app-navbar{
-        width: 100%;
+        width: 30%;
+    }
+    
+    .app-feeds{
+        width: 75%;
     }
 }

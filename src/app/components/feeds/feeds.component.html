@@ -2,10 +2,13 @@
     <h3>News Feeds</h3>
 
     <div class="feeds-content" *ngFor="let item of data">
-        <div class="feeds-header">
+        <!-- <div class="feeds-header">
             <span class="span-logo">{{item.logo}}</span>
             <span class="span-title">{{'r/' + item.name}}</span>
-        </div>
+        </div> -->
+        <app-logocontent [logo] = "item.logo" [title] = "item.name">
+
+        </app-logocontent>
 
         <div class="feeds-object">
             <p>{{item.content}}</p>
