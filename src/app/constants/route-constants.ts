@@ -1,6 +1,6 @@
 import { LoginComponent } from "../components/login/login.component";
 import { HomeComponent } from './../components/home/home.component';
-import { FeedsComponent } from '../components/feeds/feeds.component';
+import { FeedsComponent } from "../components/home/feeds/feeds.component";
 import { CreateUserComponent } from "../components/create-user/create-user.component";
 
 export const routesPath = {

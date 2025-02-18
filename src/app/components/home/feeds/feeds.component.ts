@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
-import { feedData } from '../../constants/feeds-constants';
+import { feedData } from '../../../constants/feeds-constants';
 @Component({
   selector: 'app-feeds',
   templateUrl: './feeds.component.html',
@@ -20,7 +20,8 @@ export class FeedsComponent implements OnInit {
   getData() {
     this.myData.subscribe({
       next: (val: any) => {
-        this.data = [...this.data, ...val];
+        // this.data = [...this.data, ...val];
+        this.data = val
         // this.data.push(val)
         console.log(this.data);
         console.log(val);

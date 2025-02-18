@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { FeedsComponent } from './components/feeds/feeds.component';
+import { FeedsComponent } from './components/home/feeds/feeds.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 import { CreateUserComponent } from './components/create-user/create-user.component';
@@ -26,6 +26,7 @@ import { UpvotesComponent } from './components/upvotes/upvotes.component';
 import { LogocontentComponent } from './components/logocontent/logocontent.component';
 import { HistoryComponent } from './components/home/history/history.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { CommentSectionComponent } from './components/home/comment-section/comment-section.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { CommentComponent } from './components/comment/comment.component';
     LogocontentComponent,
     HistoryComponent,
     CommentComponent,
+    CommentSectionComponent,
   ],
   imports: [
     BrowserModule,

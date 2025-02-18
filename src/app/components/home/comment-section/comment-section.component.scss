@@ -1,0 +1,10 @@
+@import "../../../../assets/scss/display";
+
+.comment-content {
+  margin-top: 1rem;
+  width: 100%;
+  @include flex-column(column, 10px);
+  padding: 5px;
+  background: #ffffff;
+  border-radius: 7px;
+}
