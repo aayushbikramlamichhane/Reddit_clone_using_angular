@@ -25,6 +25,7 @@ import { NavbarComponent } from './components/home/navbar/navbar.component';
 import { UpvotesComponent } from './components/upvotes/upvotes.component';
 import { LogocontentComponent } from './components/logocontent/logocontent.component';
 import { HistoryComponent } from './components/home/history/history.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { HistoryComponent } from './components/home/history/history.component';
     UpvotesComponent,
     LogocontentComponent,
     HistoryComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

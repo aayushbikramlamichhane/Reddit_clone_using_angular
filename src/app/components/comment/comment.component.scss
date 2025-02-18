@@ -1,0 +1,13 @@
+@import '../../../assets/scss/flex';
+@import '../../../assets/scss/display';
+
+.comment-container {
+  @include display-flex;
+  @include flex-column(row, 5px);
+  background: rgb(228, 234, 238);
+  border: none;
+  border-radius: 40%;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}

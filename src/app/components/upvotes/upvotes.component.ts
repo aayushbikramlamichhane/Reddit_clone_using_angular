@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-upvotes',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./upvotes.component.scss']
 })
 export class UpvotesComponent {
-
+  @Input() upvoteCount !: number;
 }

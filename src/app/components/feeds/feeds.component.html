@@ -16,9 +16,13 @@
         </div>
 
         <div class="comment-section">
-            <app-upvotes>
+            <app-upvotes [upvoteCount] = "item.upvoteCount">
                 
             </app-upvotes>
+
+            <app-comment [commentCount] = "item.commentCount">
+                
+            </app-comment>
         </div>
     </div>
 </div>
