@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-comment',
@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentComponent {
   @Input() commentCount !: number;
+  @Output() onClick = new EventEmitter<boolean>()
+
+
+  handleClick(){
+    this.onClick.emit(true)
+  }
 }

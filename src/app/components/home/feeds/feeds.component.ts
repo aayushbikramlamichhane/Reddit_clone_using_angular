@@ -7,6 +7,7 @@ import { feedData } from '../../../constants/feeds-constants';
   styleUrls: ['./feeds.component.scss'],
 })
 export class FeedsComponent implements OnInit {
+  hiddenComment!: boolean;
   data: any[] = [];
 
   feeds: any[] = feedData;
@@ -21,7 +22,7 @@ export class FeedsComponent implements OnInit {
     this.myData.subscribe({
       next: (val: any) => {
         // this.data = [...this.data, ...val];
-        this.data = val
+        this.data = val;
         // this.data.push(val)
         console.log(this.data);
         console.log(val);
@@ -30,5 +31,15 @@ export class FeedsComponent implements OnInit {
         alert(err.message);
       },
     });
+  }
+
+  displayComment() {
+    this.hiddenComment = !this.hiddenComment;
+    console.log(this.hiddenComment);
+    console.log('clicked');
+  }
+
+  cancelButton(){
+    this.hiddenComment = !this.hiddenComment
   }
 }

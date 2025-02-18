@@ -20,12 +20,12 @@
                 
             </app-upvotes>
 
-            <app-comment [commentCount] = "item.commentCount">
+            <app-comment [commentCount] = "item.commentCount" (onClick)="displayComment()">
                 
             </app-comment>
         </div>
         
-        <div class="comment-container">
+        <div class="comment-container" [ngStyle]="{display: hiddenComment? 'block' : 'none'}">
             <div class="comment-input">
                 <div class="input-part">
                     <app-input inputText="Add Comment" type="text" class="app-input">
@@ -38,7 +38,7 @@
                         Save
                     </app-button>
         
-                    <app-button class="cancel-button" styles="fourth">
+                    <app-button class="cancel-button" styles="fourth" (onClick)="cancelButton()">
                         Cancel
                     </app-button>
                 </div>
