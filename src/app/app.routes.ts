@@ -18,6 +18,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: routesPath.MANAGE_FEEDS,
+    component: routesComponent.MANAGE_FEEDS_COMONENT,
+    canActivate: [authGuard]
+  },
+  {
     path: '',
     redirectTo: routesPath.LOGIN,
     pathMatch: 'full',
@@ -27,7 +32,7 @@ export const routes: Routes = [
   //   component: routesComponent.REGISTERCOMPONENT
   // }
   {
-    path: routesPath.CREATEUSERACCOUNT,
+    path: routesPath.CREATE_USER_ACCOUNT,
     component: routesComponent.CREATE_USER_COMONENT,
     // canActivate: [authGuard]
   },

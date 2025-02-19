@@ -21,9 +21,7 @@ export class FeedsComponent implements OnInit {
   getData() {
     this.myData.subscribe({
       next: (val: any) => {
-        // this.data = [...this.data, ...val];
         this.data = val;
-        // this.data.push(val)
         console.log(this.data);
         console.log(val);
       },
@@ -35,11 +33,15 @@ export class FeedsComponent implements OnInit {
 
   displayComment() {
     this.hiddenComment = !this.hiddenComment;
-    console.log(this.hiddenComment);
-    console.log('clicked');
+    // console.log(this.hiddenComment);
+    // console.log('clicked');
   }
 
-  cancelButton(){
-    this.hiddenComment = !this.hiddenComment
+  saveComment() {
+    console.log('save');
+  }
+
+  cancelButton() {
+    this.hiddenComment = !this.hiddenComment;
   }
 }

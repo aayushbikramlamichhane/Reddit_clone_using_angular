@@ -41,7 +41,7 @@ export class LoginComponent {
   }
 
   onRegister() {
-    this.router.navigate([routesPath.CREATEUSERACCOUNT]);
+    this.router.navigate([routesPath.CREATE_USER_ACCOUNT]);
   }
 }
 

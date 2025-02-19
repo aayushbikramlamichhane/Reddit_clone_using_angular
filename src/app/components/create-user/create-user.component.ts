@@ -48,7 +48,7 @@ export class CreateUserComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       gender: this.fb.array([]),
-      // gender: ['',[Validators.required]],
+      // gender: ['',[Validators.required]],  
       occupations: ['', [Validators.required]],
     });
   }

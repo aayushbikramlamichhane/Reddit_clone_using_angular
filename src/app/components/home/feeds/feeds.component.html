@@ -29,12 +29,12 @@
             <div class="comment-input">
                 <div class="input-part">
                     <app-input inputText="Add Comment" type="text" class="app-input">
-        
+
                     </app-input>
                 </div>
         
                 <div class="comment-button">
-                    <app-button class="save-button" styles="third" [ngStyle]="{color: 'black'}">
+                    <app-button class="save-button" styles="third" [ngStyle]="{color: 'black'}" (onClick)="saveComment()" >
                         Save
                     </app-button>
         

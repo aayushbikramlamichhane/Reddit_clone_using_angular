@@ -7,9 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FeedsComponent } from './components/home/feeds/feeds.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { CreateUserComponent } from './components/create-user/create-user.component';
-import { TitleCasePipe } from '@angular/common';
+import { CommonModule, TitleCasePipe } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ImageComponent } from './components/image/image.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -27,6 +27,7 @@ import { LogocontentComponent } from './components/logocontent/logocontent.compo
 import { HistoryComponent } from './components/home/history/history.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentSectionComponent } from './components/home/comment-section/comment-section.component';
+import { ManageFeedsComponent } from './components/manage-feeds/manage-feeds.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { CommentSectionComponent } from './components/home/comment-section/comme
     HistoryComponent,
     CommentComponent,
     CommentSectionComponent,
+    ManageFeedsComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,9 @@ import { CommentSectionComponent } from './components/home/comment-section/comme
     RouterLinkActive,
     RouterModule,
     ReactiveFormsModule,
-    TitleCasePipe
+    TitleCasePipe,
+    CommonModule,
+    FormsModule
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]
