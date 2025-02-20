@@ -8,14 +8,43 @@
                     <div class="form-control">
                         <label for="logo">Logo</label>
                         <input type="text" formControlName="logo" class="input-value">
+                        <div class="error-logo"
+                            *ngIf="getControl(i, 'logo')?.invalid && getControl(i, 'logo')?.touched">
+                            <span *ngIf="getControl(i, 'logo')?.hasError('maxlength')">
+                                *Invalid logo
+                            </span>
+
+                            <span *ngIf="getControl(i, 'logo')?.hasError('required')">
+                                *Logo is required
+                            </span>
+
+
+                        </div>
                     </div>
                     <div class="form-control">
                         <label>Name</label>
                         <input type="text" formControlName="name" class="input-value">
+                        <div class="error-name" *ngIf="getControl(i, 'name')?.invalid && getControl(i, 'name')?.touched">
+
+                        
+                            <span *ngIf="getControl(i, 'name')?.hasError('required')">
+                                *Name is required
+                            </span>
+                        
+                        
+                        </div>
                     </div>
                     <div class="form-control">
                         <label>Body</label>
                         <input type="text" formControlName="body" class="input-value">
+                        <div class="error-body" *ngIf="getControl(i, 'body')?.invalid && getControl(i, 'body')?.touched">
+                        
+                            <span *ngIf="getControl(i, 'body')?.hasError('required')">
+                                *Body is required
+                            </span>
+                        
+                        
+                        </div>
                     </div>
 
                     <div class="form-control">

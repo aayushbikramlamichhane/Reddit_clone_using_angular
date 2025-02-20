@@ -23,6 +23,11 @@
 
         .form-control {
           @include flex-column(column, 2px);
+          .error-logo,
+          .error-name,
+          .error-body {
+            color: red;
+          }
 
           .input-value {
             width: 100%;

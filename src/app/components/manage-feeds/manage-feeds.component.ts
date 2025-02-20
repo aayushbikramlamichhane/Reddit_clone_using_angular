@@ -25,6 +25,9 @@ export class ManageFeedsComponent implements OnInit {
       content: this.fb.array([]),
     });
   }
+  getControl(index: number, field: string) {
+    return (this.content.at(index) as FormGroup).get(field);
+  }
 
   get content(): FormArray {
     return this.manageFeedsForm.get('content') as FormArray;
@@ -36,8 +39,7 @@ export class ManageFeedsComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.maxLength(1),
-            Validators.minLength(1),
+            Validators.maxLength(1)
           ],
         ],
         name: ['', [Validators.required]],
@@ -49,6 +51,11 @@ export class ManageFeedsComponent implements OnInit {
   }
 
   onManage() {
+    if (this.manageFeedsForm.invalid) {
+      // console.log(this.manageFeedsForm);
+      this.manageFeedsForm.markAllAsTouched();
+      return;
+    }
     const feedImage = this.manageFeedsForm.get('image')?.value;
 
     this.content.value.forEach((item: any) => {
