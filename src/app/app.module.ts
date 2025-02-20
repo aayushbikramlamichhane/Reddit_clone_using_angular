@@ -28,6 +28,7 @@ import { HistoryComponent } from './components/home/history/history.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentSectionComponent } from './components/home/comment-section/comment-section.component';
 import { ManageFeedsComponent } from './components/manage-feeds/manage-feeds.component';
+import { IconComponent } from './components/icon/icon.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ManageFeedsComponent } from './components/manage-feeds/manage-feeds.com
     CommentComponent,
     CommentSectionComponent,
     ManageFeedsComponent,
+    IconComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,33 +1,42 @@
-<form [formGroup]="manageFeedsForm" (ngSubmit)="onManage()">
-    <div class="form-content">
-        <div formArrayName="content">
-            <div *ngFor="let item of content.controls; let i = index;" [formGroupName]="i">
-                <p>Form no: {{ i + 1 }}</p>
-                <div>
-                    <label for="logo">Logo</label>
-                    <input type="text" formControlName="logo">
-                </div>
-                <div>
-                    <label>Name</label>
-                    <input type="text" formControlName="name">
-                </div>
-                <div>
-                    <label>Body</label>
-                    <input type="text" formControlName="body">
-                </div>
-                
-                <div>
-                    <label>UpvoteCount</label>
-                    <input type="number" formControlName="upvoteCount">
-                </div>
-                <div>
-                    <label>CommentCount</label>
-                    <input type="number" formControlName="commentCount">
+<div class="form-container">
+    <form [formGroup]="manageFeedsForm" (ngSubmit)="onManage()" class="form">
+        <div class="form-content">
+            <span class="span-feeds">Create New Feeds</span>
+            <div formArrayName="content">
+                <div *ngFor="let item of content.controls; let i = index;" [formGroupName]="i" class="form-group">
+                    <p>Form no: {{ i + 1 }}</p>
+                    <div class="form-control">
+                        <label for="logo">Logo</label>
+                        <input type="text" formControlName="logo" class="input-value">
+                    </div>
+                    <div class="form-control">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="input-value">
+                    </div>
+                    <div class="form-control">
+                        <label>Body</label>
+                        <input type="text" formControlName="body" class="input-value">
+                    </div>
+
+                    <div class="form-control">
+                        <label>UpvoteCount</label>
+                        <input type="number" formControlName="upvoteCount" class="input-value">
+                    </div>
+                    <div class="form-control">
+                        <label>CommentCount</label>
+                        <input type="number" formControlName="commentCount" class="input-value">
+                    </div>
                 </div>
             </div>
-        </div>
-        <button type="button" (click)="addContent()">Add New Feed</button>
+            <div class="button-section">
+                <app-button type="button" (onClick)="addContent()" styles="primary">
+                    Create Feeds
+                </app-button>
+                <app-button type="submit" styles="third">
+                    Add Feeds
+                </app-button>
+            </div>
 
-        <button type="submit">Create</button>
-    </div>
-</form>
+        </div>
+    </form>
+</div>

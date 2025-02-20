@@ -16,6 +16,7 @@ export class ManageFeedsComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeManageFeeds();
+    this.addContent();
   }
 
   initializeManageFeeds() {
@@ -39,24 +40,23 @@ export class ManageFeedsComponent implements OnInit {
             Validators.minLength(1),
           ],
         ],
-        name: [''],
-        body: [''],
-        // image: [''],
-        upvoteCount: [''],
-        commentCount: [''],
+        name: ['', [Validators.required]],
+        body: ['', [Validators.required]],
+        upvoteCount: [0],
+        commentCount: [0],
       })
     );
   }
 
   onManage() {
-    const feedImage = this.manageFeedsForm.get('image')?.value; 
+    const feedImage = this.manageFeedsForm.get('image')?.value;
 
     this.content.value.forEach((item: any) => {
       this.feed.unshift({
         logo: item?.logo,
         name: item?.name,
         content: item?.body,
-        img: feedImage, 
+        img: feedImage,
         upvoteCount: item?.upvoteCount,
         commentCount: item?.commentCount,
       });
