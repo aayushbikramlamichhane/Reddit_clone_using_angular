@@ -15,18 +15,30 @@
   }
   .primary {
     background: blue;
+    &:hover{
+      background: rgb(1, 1, 111);
+    }
   }
 
   .secondary{
     background:green;
+    &:hover {
+      background: rgb(1, 69, 1);
+    }
   }
 
   .third{
     background: rgb(125, 204, 235);
+    &:hover {
+      background: rgb(74, 131, 153);
+    }
   }
 
   .fourth{
     background: red;
+    &:hover {
+      background: rgb(138, 2, 2);
+    }
   }
 }
 

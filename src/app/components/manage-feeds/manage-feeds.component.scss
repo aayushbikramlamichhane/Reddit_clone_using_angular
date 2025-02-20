@@ -25,7 +25,8 @@
           @include flex-column(column, 2px);
           .error-logo,
           .error-name,
-          .error-body {
+          .error-body,
+          .error-number {
             color: red;
           }
 

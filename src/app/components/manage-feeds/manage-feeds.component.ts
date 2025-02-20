@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { feedData } from 'src/app/constants/feeds-constants';
+import { nameValidator } from 'src/app/validators/name.validator';
+import { numberValidator } from 'src/app/validators/number.validator';
 
 @Component({
   selector: 'app-manage-feeds',
@@ -35,24 +37,17 @@ export class ManageFeedsComponent implements OnInit {
   addContent() {
     this.content.push(
       this.fb.group({
-        logo: [
-          '',
-          [
-            Validators.required,
-            Validators.maxLength(1)
-          ],
-        ],
-        name: ['', [Validators.required]],
+        logo: ['', [Validators.required, Validators.maxLength(1)]],
+        name: ['', [Validators.required, nameValidator()]],
         body: ['', [Validators.required]],
-        upvoteCount: [0],
-        commentCount: [0],
+        upvoteCount: [0, [numberValidator()]],
+        commentCount: [0, [numberValidator()]],
       })
     );
   }
 
   onManage() {
     if (this.manageFeedsForm.invalid) {
-      // console.log(this.manageFeedsForm);
       this.manageFeedsForm.markAllAsTouched();
       return;
     }
