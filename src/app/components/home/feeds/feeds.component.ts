@@ -7,7 +7,8 @@ import { feedData } from '../../../constants/feeds-constants';
   styleUrls: ['./feeds.component.scss'],
 })
 export class FeedsComponent implements OnInit {
-  hiddenComment!: boolean;
+  commentText: string = '';
+  hiddenComments: boolean[] = [];
   data: any[] = [];
 
   feeds: any[] = feedData;
@@ -23,25 +24,38 @@ export class FeedsComponent implements OnInit {
       next: (val: any) => {
         this.data = val;
         console.log(this.data);
-        console.log(val);
+        // console.log(val);
       },
       error(err) {
         alert(err.message);
       },
+      complete() {
+        console.log('completed');
+      },
     });
   }
-
-  displayComment() {
-    this.hiddenComment = !this.hiddenComment;
-    // console.log(this.hiddenComment);
-    // console.log('clicked');
+  updateComment(value: string) {
+    this.commentText = value;
   }
 
-  saveComment() {
-    console.log('save');
+  displayComment(i: number) {
+    this.hiddenComments[i] = !this.hiddenComments[i]; 
   }
 
-  cancelButton() {
-    this.hiddenComment = !this.hiddenComment;
+  saveComment(i: number) {
+    if (!this.commentText.trim()) return; 
+    const newComment = {
+      logo: 'A',
+      title: "Aayush",
+      body: this.commentText,
+      upvote: 0,
+    };
+
+    this.data[i].comment.unshift(newComment); 
+    this.data[i].commentCount += 1; 
+  }
+
+  cancelButton(i:number) {
+    this.hiddenComments[i] = !this.hiddenComments[i]; 
   }
 }
