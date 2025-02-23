@@ -49,22 +49,21 @@
                     </div>
 
                     <div class="form-control">
-                        <label>UpvoteCount</label>
-                        <input type="text" formControlName="upvoteCount" class="input-value">
-                        <div class="error-number" *ngIf="getControl(i, 'upvoteCount')?.invalid && getControl(i, 'upvoteCount')?.touched">
-                            <span *ngIf="getControl(i, 'upvoteCount')?.hasError('invalidNumber')">
-                                *Enter A Number
+                        <label for="">Image</label>
+                        <select formControlName="images" class="select-image">
+                        
+                            <ng-container *ngFor="let image of images">
+                                <option [value]="image.img">{{image.img}}</option>
+                            </ng-container>
+                        
+                        </select>
+                        <!-- <div class="error-body" *ngIf="getControl(i, 'images')?.invalid && getControl(i, 'images')?.touched">
+                        
+                            <span *ngIf="getControl(i, 'images')?.hasError('required')">
+                                *Image is required
                             </span>
-                        </div>
-                    </div>
-                    <div class="form-control">
-                        <label>CommentCount</label>
-                        <input type="text" formControlName="commentCount" class="input-value">
-                        <div class="error-number" *ngIf="getControl(i, 'commentCount')?.invalid && getControl(i, 'commentCount')?.touched">
-                            <span *ngIf="getControl(i, 'commentCount')?.hasError('invalidNumber')">
-                                *Enter A Number
-                            </span>
-                        </div>
+                        
+                        </div> -->
                     </div>
                 </div>
             </div>

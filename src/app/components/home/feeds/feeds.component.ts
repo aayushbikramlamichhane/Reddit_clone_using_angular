@@ -40,6 +40,7 @@ export class FeedsComponent implements OnInit {
 
   displayComment(i: number) {
     this.hiddenComments[i] = !this.hiddenComments[i]; 
+    // console.log(i);
   }
 
   saveComment(i: number) {
@@ -53,6 +54,7 @@ export class FeedsComponent implements OnInit {
 
     this.data[i].comment.unshift(newComment); 
     this.data[i].commentCount += 1; 
+    // console.log(i);
   }
 
   cancelButton(i:number) {

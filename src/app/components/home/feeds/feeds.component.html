@@ -1,13 +1,7 @@
 <div class="feed-container">
     <h3>News Feeds</h3>
-
     <div class="feeds-content" *ngFor="let item of data; let i = index;">
-        <!-- <div class="feeds-header">
-            <span class="span-logo">{{item.logo}}</span>
-            <span class="span-title">{{'r/' + item.name}}</span>
-        </div> -->
-        <app-logocontent [logo] = "item.logo" [title] = "item.name">
-
+        <app-logocontent [logo]="item.logo" [title]="item.name">
         </app-logocontent>
 
         <div class="feeds-object">
@@ -16,34 +10,34 @@
         </div>
 
         <div class="comment-section">
-            <app-upvotes [upvoteCount] = "item.upvoteCount">
-                
+            <app-upvotes [upvoteCount]="item.upvoteCount">
             </app-upvotes>
 
-            <app-comment [commentCount] = "item.commentCount" (onClick)="displayComment(i)">
-                
+            <app-comment [commentCount]="item.commentCount" (onClick)="displayComment(i)">
             </app-comment>
         </div>
-        
+
         <div class="comment-container" [ngStyle]="{display: hiddenComments[i]? 'block' : 'none'}">
             <div class="comment-input">
                 <div class="input-part">
-                    <app-input  inputText="Add Comment" type="input" class="app-input" (inputChanged)="updateComment($event)">
+                    <app-input inputText="Add Comment" type="input" class="app-input"
+                        (inputChanged)="updateComment($event)">
                     </app-input>
                 </div>
-        
+
                 <div class="comment-button">
-                    <app-button class="save-button" styles="third" [ngStyle]="{color: 'black'}" (onClick)="saveComment(i)" >
+                    <app-button class="save-button" styles="third" [ngStyle]="{color: 'black'}"
+                        (onClick)="saveComment(i)">
                         Save
                     </app-button>
-        
+
                     <app-button class="cancel-button" styles="fourth" (onClick)="cancelButton(i)">
                         Cancel
                     </app-button>
                 </div>
             </div>
             <div *ngFor="let cmt of item.comment">
-                <app-comment-section  [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote">
+                <app-comment-section [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote">
                 </app-comment-section>
             </div>
         </div>

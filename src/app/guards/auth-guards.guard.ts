@@ -16,10 +16,6 @@ export const authGuard: CanActivateFn = (
   const router: Router = inject(Router);
   const protectedRoutes: string[] = ['/home', '/feeds'];
 
-
-  // const loggedIn = localStorage.getItem('loggedIn');
-
-
   if (protectedRoutes.includes(state.url) && !loggedIn) {
     router.navigate(['/']);
     return false; 
