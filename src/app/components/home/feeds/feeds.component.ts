@@ -70,11 +70,17 @@ export class FeedsComponent implements OnInit {
   }
 
   saveEdit(i: number) {
-      this.data[i].content = this.editedBody[i]; 
-      this.isEditing[i] = !this.isEditing[i];
+    this.data[i].content = this.editedBody[i];
+    this.isEditing[i] = !this.isEditing[i];
   }
 
   cancelEdit(i: number) {
     this.isEditing[i] = !this.isEditing[i];
+  }
+
+  onDelete(i : number, c:number){
+    console.log("delete");
+    this.data[i]?.comment.splice(c,1)
+    this.data[i].commentCount -= 1;
   }
 }

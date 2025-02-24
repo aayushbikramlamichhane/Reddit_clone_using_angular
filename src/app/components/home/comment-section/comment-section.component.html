@@ -1,4 +1,4 @@
-<div class="comment-content">
+<div class="comment-content" >
     <app-logocontent [logo]="logo" [title]="title" [ngStyle]="{color: 'black'}">
     </app-logocontent>
 
@@ -9,11 +9,12 @@
         <app-upvotes [upvoteCount]="upvote"></app-upvotes>
 
         <div class="app-button">
-            <div class="edit-button">
-                <!-- <app-button *ngIf="!isEditing" type="button" styles="secondary" (onClick)="onEdit()">
-                    Edit
-                </app-button> -->
-
+            <div class="delete-button">
+                <app-button *ngIf="!isEditing" type="button" styles="fourth" (onClick)="deleteEdit()">
+                    Delete
+                </app-button>
+            </div>
+            <div class="save-button">
                 <app-button *ngIf="isEditing" type="button" styles="primary" (onClick)="saveEdit()">
                     Save
                 </app-button>

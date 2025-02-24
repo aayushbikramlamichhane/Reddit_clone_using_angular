@@ -54,8 +54,8 @@
                     </app-button>
                 </div>
             </div>
-            <div *ngFor="let cmt of item.comment">
-                <app-comment-section [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote">
+            <div *ngFor="let cmt of item.comment; let c = index">
+                <app-comment-section [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote" (deleteComment)="onDelete(i,c)">
                 </app-comment-section>
             </div>
         </div>
