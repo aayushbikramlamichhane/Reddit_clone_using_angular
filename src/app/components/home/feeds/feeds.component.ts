@@ -11,6 +11,9 @@ export class FeedsComponent implements OnInit {
   hiddenComments: boolean[] = [];
   data: any[] = [];
 
+  isEditing: boolean[] = [];
+  editedBody: string[] = [];
+
   feeds: any[] = feedData;
 
   myData = of(this.feeds);
@@ -39,25 +42,39 @@ export class FeedsComponent implements OnInit {
   }
 
   displayComment(i: number) {
-    this.hiddenComments[i] = !this.hiddenComments[i]; 
+    this.hiddenComments[i] = !this.hiddenComments[i];
     // console.log(i);
   }
 
   saveComment(i: number) {
-    if (!this.commentText.trim()) return; 
+    if (!this.commentText.trim()) return;
     const newComment = {
       logo: 'A',
-      title: "Aayush",
+      title: 'Aayush',
       body: this.commentText,
       upvote: 0,
     };
 
-    this.data[i].comment.unshift(newComment); 
-    this.data[i].commentCount += 1; 
-    // console.log(i);
+    this.data[i].comment.unshift(newComment);
+    this.data[i].commentCount += 1;
   }
 
-  cancelButton(i:number) {
-    this.hiddenComments[i] = !this.hiddenComments[i]; 
+  cancelButton(i: number) {
+    this.hiddenComments[i] = !this.hiddenComments[i];
+  }
+
+  onEdit(i: number) {
+    console.log(this.data[i]?.content);
+    this.isEditing[i] = !this.isEditing[i];
+    this.editedBody[i] = this.data[i]?.content;
+  }
+
+  saveEdit(i: number) {
+      this.data[i].content = this.editedBody[i]; 
+      this.isEditing[i] = !this.isEditing[i];
+  }
+
+  cancelEdit(i: number) {
+    this.isEditing[i] = !this.isEditing[i];
   }
 }

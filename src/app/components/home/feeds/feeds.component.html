@@ -5,7 +5,25 @@
         </app-logocontent>
 
         <div class="feeds-object">
-            <p>{{item.content}}</p>
+            <div class="feeds-content">
+                <div class="feed-edit">
+                    <p *ngIf="!isEditing[i]" (click)="onEdit(i)">{{item.content}}</p>
+                    <input *ngIf="isEditing[i]" [(ngModel)]="editedBody[i]" class="edit-input" />
+                </div>
+                <div class="app-button">
+                    <div class="save-button">
+                        <app-button *ngIf="isEditing[i]" type="button" styles="primary" (onClick)="saveEdit(i)">
+                            Save
+                        </app-button>
+                    </div>
+                
+                    <div class="cancel-button" *ngIf="isEditing[i]">
+                        <app-button type="button" (onClick)="cancelEdit(i)" styles="fourth">
+                            Cancel
+                        </app-button>
+                    </div>
+                </div>
+            </div>
             <img src={{item.img}} alt="">
         </div>
 
@@ -41,6 +59,5 @@
                 </app-comment-section>
             </div>
         </div>
-
     </div>
 </div>

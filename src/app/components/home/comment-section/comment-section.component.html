@@ -1,11 +1,30 @@
 <div class="comment-content">
-    <app-logocontent [logo]="logo" [title]='title' [ngStyle]="{color: 'black'}">
-
+    <app-logocontent [logo]="logo" [title]="title" [ngStyle]="{color: 'black'}">
     </app-logocontent>
 
-    <span>{{body}}</span>
+    <span *ngIf="!isEditing" (click) = "onEdit()">{{ body }}</span>
+    <input *ngIf="isEditing" [(ngModel)]="editedBody" class="input-edit"/>
 
-    <app-upvotes [upvoteCount]="upvote">
+    <div class="comment-footer">
+        <app-upvotes [upvoteCount]="upvote"></app-upvotes>
 
-    </app-upvotes>
+        <div class="app-button">
+            <div class="edit-button">
+                <!-- <app-button *ngIf="!isEditing" type="button" styles="secondary" (onClick)="onEdit()">
+                    Edit
+                </app-button> -->
+
+                <app-button *ngIf="isEditing" type="button" styles="primary" (onClick)="saveEdit()">
+                    Save
+                </app-button>
+            </div>
+
+            <div class="cancel-button" *ngIf="isEditing">
+                <app-button type="button" (onClick)="cancelEdit()" styles="fourth">
+                    Cancel
+                </app-button>
+            </div>
+        </div>
+
+    </div>
 </div>

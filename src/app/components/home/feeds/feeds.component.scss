@@ -16,6 +16,36 @@
     .feeds-object {
       @include flex-column(column, 8px);
 
+      .feeds-content {
+        @include flex-column(row, 8px);
+
+        .feed-edit {
+          width: 50%;
+
+          .edit-input {
+            width: 100%;
+            height: 2rem;
+            border-radius: 5px;
+            border: none;
+            outline: 1px solid black;
+          }
+        }
+
+        .app-button {
+          @include flex-column(row, 8px);
+          width: 50%;
+
+          // border: 1px solid black;
+          .save-button {
+            width: 20%;
+          }
+          .cancel-button {
+            width: 20%;
+          }
+        }
+
+      }
+
       img {
         width: 100%;
         outline: 1px solid rgb(117, 79, 79);
@@ -29,6 +59,7 @@
       @include flex-column(row, 2rem);
       align-items: center;
     }
+
     .comment-container {
       width: 100%;
       @include flex-column(column, 0px);
@@ -53,6 +84,7 @@
             width: 35%;
           }
         }
-      }}
+      }
+    }
   }
 }
