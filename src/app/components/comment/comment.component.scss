@@ -2,12 +2,11 @@
 @import '../../../assets/scss/display';
 
 .comment-container {
-  @include display-flex;
-  @include flex-column(row, 5px);
+  @include flex-column(row, 7px);
+  align-items: center;
   background: rgb(228, 234, 238);
+  padding: 11px 15px 11px 15px;
   border: none;
-  border-radius: 40%;
-  width: 60px;
-  height: 30px;
+  border-radius: 4rem;
   cursor: pointer;
 }

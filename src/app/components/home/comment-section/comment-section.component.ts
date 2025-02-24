@@ -10,7 +10,7 @@ export class CommentSectionComponent {
   @Input() title!: string;
   @Input() body!: string;
   @Input() upvote!: number;
-  @Output() deleteComment = new EventEmitter<any>();
+  @Output() deleteComment = new EventEmitter<void>();
 
   isEditing: boolean = false;
   editedBody: string = '';

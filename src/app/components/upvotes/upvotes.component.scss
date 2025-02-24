@@ -1,18 +1,13 @@
 @import "../../../assets/scss/display";
 
-.upvote-container{
-    background: rgb(228, 234, 238);
-    padding: 0.3rem;
-    // display: flex;
-    @include flex-column(row,5px);
-    align-items: center;
-    justify-content: space-between;
-    // gap: 5px;
-    border: none;
-    border-radius: 40%;
-    width: 70px;
-    height: 40px;
-    i{
-        cursor: pointer;
-    }
+.upvote-container {
+  @include flex-column(row, 9px);
+  align-items: center;
+  background: rgb(228, 234, 238);
+  padding: 11px 9px 11px 9px;
+  border: none;
+  border-radius: 4rem;
+  i {
+    cursor: pointer;
+  }
 }

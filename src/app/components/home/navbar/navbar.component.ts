@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { routesPath } from 'src/app/constants/route-constants';
-// import { RouterLink } from '@angular/router';
-import { feedData } from 'src/app/constants/feeds-constants';
+// import { routesPath } from 'src/app/constants/route-constants';
+import { FEED_DATA } from '../../../constants/feeds-constants';
 import { Router } from '@angular/router';
+import { FeedData } from '../../../models/feed-data';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  feeds: any[] = feedData;
+  feeds: FeedData[] = FEED_DATA;
   components = [
     {
       logo: 'fa-solid fa-house',
@@ -28,31 +28,9 @@ export class NavbarComponent {
       name: 'Feeds',
     },
   ];
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
 
   manageFeeds() {
-    // this.feeds.unshift({
-    //   logo: 'A',
-    //   name: 'Aayush',
-    //   content: 'My Name is Aayush Bikram Lamichhane',
-    //   img: '../../../../assets/images/aayush.jpg',
-    //   upvoteCount: 100,
-    //   commentCount: 2,
-    //   comment: [
-    //     {
-    //       logo: 'L',
-    //       topic: 'Luffy',
-    //       body: 'I will Help You',
-    //       upvote: 150,
-    //     },
-    //     {
-    //       logo: 'S',
-    //       topic: 'Sanji',
-    //       body: 'Yeah, Right',
-    //       upvote: 150,
-    //     },
-    //   ],
-    // });
-    this.router.navigate(['/manage-feeds'])
+    this.router.navigate(['/manage-feeds']);
   }
 }

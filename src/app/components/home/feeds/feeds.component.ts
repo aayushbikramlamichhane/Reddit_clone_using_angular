@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
-import { feedData } from '../../../constants/feeds-constants';
+import { FEED_DATA } from '../../../constants/feeds-constants';
+import { FeedData } from 'src/app/models/feed-data';
+
 @Component({
   selector: 'app-feeds',
   templateUrl: './feeds.component.html',
@@ -9,12 +11,12 @@ import { feedData } from '../../../constants/feeds-constants';
 export class FeedsComponent implements OnInit {
   commentText: string = '';
   hiddenComments: boolean[] = [];
-  data: any[] = [];
+  data: FeedData[] = [];
 
   isEditing: boolean[] = [];
   editedBody: string[] = [];
 
-  feeds: any[] = feedData;
+  feeds: FeedData[] = FEED_DATA;
 
   myData = of(this.feeds);
 
@@ -24,10 +26,9 @@ export class FeedsComponent implements OnInit {
 
   getData() {
     this.myData.subscribe({
-      next: (val: any) => {
+      next: (val: FeedData[]) => {
         this.data = val;
         console.log(this.data);
-        // console.log(val);
       },
       error(err) {
         alert(err.message);
@@ -78,9 +79,9 @@ export class FeedsComponent implements OnInit {
     this.isEditing[i] = !this.isEditing[i];
   }
 
-  onDelete(i : number, c:number){
-    console.log("delete");
-    this.data[i]?.comment.splice(c,1)
+  onDelete(i: number, c: number) {
+    console.log('delete');
+    this.data[i]?.comment.splice(c, 1);
     this.data[i].commentCount -= 1;
   }
 }

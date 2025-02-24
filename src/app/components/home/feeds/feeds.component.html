@@ -16,7 +16,7 @@
                             Save
                         </app-button>
                     </div>
-                
+
                     <div class="cancel-button" *ngIf="isEditing[i]">
                         <app-button type="button" (onClick)="cancelEdit(i)" styles="fourth">
                             Cancel
@@ -55,7 +55,8 @@
                 </div>
             </div>
             <div *ngFor="let cmt of item.comment; let c = index">
-                <app-comment-section [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote" (deleteComment)="onDelete(i,c)">
+                <app-comment-section [logo]="cmt.logo" [title]="cmt.title" [body]="cmt.body" [upvote]="cmt.upvote"
+                    (deleteComment)="onDelete(i,c)">
                 </app-comment-section>
             </div>
         </div>

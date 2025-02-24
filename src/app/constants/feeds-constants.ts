@@ -1,4 +1,6 @@
-export const feedData: any[] = [
+import { FeedData } from "../models/feed-data";
+
+export const FEED_DATA: FeedData[] = [
   {
     logo: 'L',
     name: 'Luffy',
@@ -73,6 +75,7 @@ export const feedData: any[] = [
     img: '../../../assets/images/pexels-photo-1097456 (1).jpg',
     upvoteCount: 300,
     commentCount: 0,
+    comment: [],
   },
   {
     logo: 'M',
@@ -81,6 +84,7 @@ export const feedData: any[] = [
     img: '../../../assets/images/man.jpg',
     upvoteCount: 700,
     commentCount: 0,
+    comment: [],
   },
   {
     logo: 'O',
@@ -89,6 +93,7 @@ export const feedData: any[] = [
     img: '../../../assets/images/onepiece.jpeg',
     upvoteCount: 800,
     commentCount: 0,
+    comment: [],
   },
   {
     logo: 'B',

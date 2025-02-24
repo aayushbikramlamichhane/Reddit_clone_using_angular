@@ -2,7 +2,7 @@
     <app-logocontent [logo]="logo" [title]="title" [ngStyle]="{color: 'black'}">
     </app-logocontent>
 
-    <span *ngIf="!isEditing" (click) = "onEdit()">{{ body }}</span>
+    <span *ngIf="!isEditing">{{ body }}</span>
     <input *ngIf="isEditing" [(ngModel)]="editedBody" class="input-edit"/>
 
     <div class="comment-footer">
@@ -14,8 +14,15 @@
                     Delete
                 </app-button>
             </div>
-            <div class="save-button">
-                <app-button *ngIf="isEditing" type="button" styles="primary" (onClick)="saveEdit()">
+            <div class="edit-button" *ngIf="!isEditing">
+                <app-button type="button" styles="primary" (click)="onEdit()">
+                    Edit
+                </app-button>
+            </div>
+            
+            <!-- Save Button -->
+            <div class="save-button" *ngIf="isEditing">
+                <app-button type="button" styles="primary" (click)="saveEdit()">
                     Save
                 </app-button>
             </div>

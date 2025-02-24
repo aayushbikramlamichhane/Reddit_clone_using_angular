@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { feedData } from 'src/app/constants/feeds-constants';
+import { FEED_DATA } from 'src/app/constants/feeds-constants';
+import { FeedData } from 'src/app/models/feed-data';
 import { nameValidator } from 'src/app/validators/name.validator';
 // import { numberValidator } from 'src/app/validators/number.validator';
 
@@ -12,7 +13,7 @@ import { nameValidator } from 'src/app/validators/name.validator';
 })
 export class ManageFeedsComponent implements OnInit {
   manageFeedsForm!: FormGroup;
-  feed: any[] = feedData;
+  feed: FeedData[] = FEED_DATA;
   images = [
     {
       img: '../../../assets/images/man.jpg',
@@ -53,7 +54,6 @@ export class ManageFeedsComponent implements OnInit {
     return this.manageFeedsForm.get('content') as FormArray;
   }
 
-
   // patchImage() {
   //   this.content.get('images')?.patchValue('../../../assets/images/bat.jpg');
   // }
@@ -71,7 +71,6 @@ export class ManageFeedsComponent implements OnInit {
       })
     );
   }
-
 
   onManage() {
     if (this.manageFeedsForm.invalid) {
