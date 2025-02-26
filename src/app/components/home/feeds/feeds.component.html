@@ -4,28 +4,8 @@
         <app-logocontent [logo]="item.logo" [title]="item.name">
         </app-logocontent>
 
-        <div class="feeds-object">
-            <div class="feeds-content">
-                <div class="feed-edit">
-                    <p *ngIf="!isEditing[i]" (click)="onEdit(i)">{{item.content}}</p>
-                    <input *ngIf="isEditing[i]" [(ngModel)]="editedBody[i]" class="edit-input" />
-                </div>
-                <div class="app-button">
-                    <div class="save-button">
-                        <app-button *ngIf="isEditing[i]" type="button" styles="primary" (onClick)="saveEdit(i)">
-                            Save
-                        </app-button>
-                    </div>
+        <app-feed-item [item]="item"></app-feed-item>
 
-                    <div class="cancel-button" *ngIf="isEditing[i]">
-                        <app-button type="button" (onClick)="cancelEdit(i)" styles="fourth">
-                            Cancel
-                        </app-button>
-                    </div>
-                </div>
-            </div>
-            <img src={{item.img}} alt="">
-        </div>
 
         <div class="comment-section">
             <app-upvotes [upvoteCount]="item.upvoteCount">

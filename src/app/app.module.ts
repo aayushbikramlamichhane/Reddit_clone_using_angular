@@ -12,8 +12,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 import { CommonModule, TitleCasePipe } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ImageComponent } from './components/image/image.component';
-import { ButtonComponent } from './components/button/button.component';
-import { LogoComponent } from './components/logo/logo.component';
+import { ButtonComponent } from './components/shared-componnent/button/button.component';
+import { LogoComponent } from './components/shared-componnent/logo/logo.component';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { RedditComponent } from './components/home/reddit/reddit.component';
@@ -22,13 +22,14 @@ import { SearchComponent } from './components/search/search.component';
 import { InputComponent } from './components/input/input.component';
 import { UsernameComponent } from './components/home/username/username.component';
 import { NavbarComponent } from './components/home/navbar/navbar.component';
-import { UpvotesComponent } from './components/upvotes/upvotes.component';
-import { LogocontentComponent } from './components/logocontent/logocontent.component';
+import { UpvotesComponent } from './components/shared-componnent/upvotes/upvotes.component';
+import { LogocontentComponent } from './components/shared-componnent/logocontent/logocontent.component';
 import { HistoryComponent } from './components/home/history/history.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentSectionComponent } from './components/home/comment-section/comment-section.component';
 import { ManageFeedsComponent } from './components/manage-feeds/manage-feeds.component';
 import { IconComponent } from './components/icon/icon.component';
+import { FeedItemComponent } from './components/home/feed-item/feed-item.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { IconComponent } from './components/icon/icon.component';
     CommentSectionComponent,
     ManageFeedsComponent,
     IconComponent,
+    FeedItemComponent,
   ],
   imports: [
     BrowserModule,

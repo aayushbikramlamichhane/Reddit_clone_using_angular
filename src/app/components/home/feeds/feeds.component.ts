@@ -13,9 +13,7 @@ export class FeedsComponent implements OnInit {
   hiddenComments: boolean[] = [];
   data: FeedData[] = [];
 
-  isEditing: boolean[] = [];
-  editedBody: string[] = [];
-
+  
   feeds: FeedData[] = FEED_DATA;
 
   myData = of(this.feeds);
@@ -64,20 +62,6 @@ export class FeedsComponent implements OnInit {
     this.hiddenComments[i] = !this.hiddenComments[i];
   }
 
-  onEdit(i: number) {
-    console.log(this.data[i]?.content);
-    this.isEditing[i] = !this.isEditing[i];
-    this.editedBody[i] = this.data[i]?.content;
-  }
-
-  saveEdit(i: number) {
-    this.data[i].content = this.editedBody[i];
-    this.isEditing[i] = !this.isEditing[i];
-  }
-
-  cancelEdit(i: number) {
-    this.isEditing[i] = !this.isEditing[i];
-  }
 
   onDelete(i: number, c: number) {
     console.log('delete');

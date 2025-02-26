@@ -1,29 +1,21 @@
 @import "../../../../assets/scss/flex";
 
 .reddit-container{
-    padding: 11px;
-    // border: 1px solid black;
+    padding: 8px;
     border-bottom: 2px solid rgb(228, 234, 238);
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .app-logo{
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
         @include display-flex;
     }
 
     .app-username{
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
         @include display-flex;
     }
 
     .search-component{
         width: 30%;
-        // position: relative;
     }
 }
