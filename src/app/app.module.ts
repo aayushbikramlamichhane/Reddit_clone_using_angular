@@ -29,7 +29,12 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CommentSectionComponent } from './components/home/comment-section/comment-section.component';
 import { ManageFeedsComponent } from './components/manage-feeds/manage-feeds.component';
 import { IconComponent } from './components/icon/icon.component';
-import { FeedItemComponent } from './components/home/feed-item/feed-item.component';
+import { FeedItemComponent } from './components/home/feeds/components/feed-item/feed-item.component';
+import { EllipseIconComponent } from './components/home/feeds/components/ellipse-icon/ellipse-icon.component';
+import { EditCommentComponent } from './components/home/feeds/components/edit-comment/edit-comment.component';
+import { PopupComponent } from './components/shared-componnent/popup/popup.component';
+import { DeleteComponentComponent } from './components/shared-componnent/delete-component/delete-component.component';
+
 
 
 @NgModule({
@@ -60,6 +65,10 @@ import { FeedItemComponent } from './components/home/feed-item/feed-item.compone
     ManageFeedsComponent,
     IconComponent,
     FeedItemComponent,
+    EllipseIconComponent,
+    EditCommentComponent,
+    PopupComponent,
+    DeleteComponentComponent
   ],
   imports: [
     BrowserModule,

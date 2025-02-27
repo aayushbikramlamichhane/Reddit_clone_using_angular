@@ -12,8 +12,9 @@ export class FeedsComponent implements OnInit {
   commentText: string = '';
   hiddenComments: boolean[] = [];
   data: FeedData[] = [];
+  displayPopup: boolean[] = [];
+  displayContent : boolean[] = []
 
-  
   feeds: FeedData[] = FEED_DATA;
 
   myData = of(this.feeds);
@@ -26,7 +27,9 @@ export class FeedsComponent implements OnInit {
     this.myData.subscribe({
       next: (val: FeedData[]) => {
         this.data = val;
-        console.log(this.data);
+        this.data.forEach((item) => {
+          item.isEditing = false;
+        });
       },
       error(err) {
         alert(err.message);
@@ -36,36 +39,13 @@ export class FeedsComponent implements OnInit {
       },
     });
   }
-  updateComment(value: string) {
-    this.commentText = value;
-  }
 
   displayComment(i: number) {
     this.hiddenComments[i] = !this.hiddenComments[i];
     // console.log(i);
   }
 
-  saveComment(i: number) {
-    if (!this.commentText.trim()) return;
-    const newComment = {
-      logo: 'A',
-      title: 'Aayush',
-      body: this.commentText,
-      upvote: 0,
-    };
-
-    this.data[i].comment.unshift(newComment);
-    this.data[i].commentCount += 1;
-  }
-
-  cancelButton(i: number) {
-    this.hiddenComments[i] = !this.hiddenComments[i];
-  }
-
-
-  onDelete(i: number, c: number) {
-    console.log('delete');
-    this.data[i]?.comment.splice(c, 1);
-    this.data[i].commentCount -= 1;
+  onClick(i: number) {
+    this.displayPopup[i] = !this.displayPopup[i];
   }
 }

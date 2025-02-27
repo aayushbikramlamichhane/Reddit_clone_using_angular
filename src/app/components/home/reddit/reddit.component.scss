@@ -3,11 +3,11 @@
 .reddit-component{
     width: 100%;
     @include flex-column(row, 8px);
-    .app-navbar{
+    .navbar-container {
         width: 35%;
     }
     
-    .app-feeds{
+    .feeds-container {
         width: 100%;
     }
 }

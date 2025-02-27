@@ -1,11 +1,9 @@
-<div class="app-navbar">
-    <div class="navbar-container">
-        <div class="nav-content" *ngFor="let item of components">
-            <i class={{item.logo}}></i>
-            <span>{{item.name}}</span>
-        </div>
-        <app-button (onClick)="manageFeeds()">
-            Manage Feeds
-        </app-button>
+<div class="navbar-container">
+    <div class="nav-content" *ngFor="let item of components">
+        <i class={{item.logo}}></i>
+        <span>{{item.name}}</span>
     </div>
+    <app-button (onClick)="manageFeeds()">
+        Manage Feeds
+    </app-button>
 </div>

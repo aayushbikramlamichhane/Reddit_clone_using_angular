@@ -1,0 +1,22 @@
+
+@import '../../../../../../assets/scss/display';
+
+.comment-input {
+  @include flex-column(row, 5px);
+  align-items: center;
+  justify-content: center;
+
+  .input-part {
+    width: 100%;
+  }
+
+  .comment-button {
+    @include flex-column(row, 5px);
+    width: 50%;
+
+    .save-button,
+    .cancel-button {
+      width: 35%;
+    }
+  }
+}

@@ -1,5 +1,5 @@
-@import '../../../../assets/scss/display';
 @import '../../../../assets/scss/flex';
+@import '../../../../assets/scss/display';
 
 .feed-container {
   padding: 7px 14px 0 21px;
@@ -10,9 +10,26 @@
   .feeds-content {
     padding: 10px 5px 0 10px;
     border-radius: 5px;
-    
+
     @include flex-column(column, 5px);
 
+    .feeds-icon {
+      display: flex;
+      justify-content: space-between;
+
+      .ellipse-icon {
+        position: relative;
+
+        .popup-content {
+          display: none;
+
+        }
+      }
+    }
+
+    .delete-display {
+      @include flex-column(column, 5px);
+    }
 
     .comment-section {
       margin-top: 1rem;
@@ -26,27 +43,10 @@
       @include flex-column(column, 0px);
       display: none;
 
-      .comment-input {
-        @include flex-column(row, 5px);
-        align-items: center;
-        justify-content: center;
 
-        .input-part {
-          width: 100%;
-        }
-
-        .comment-button {
-          @include flex-column(row, 5px);
-          width: 50%;
-
-          .save-button,
-          .cancel-button {
-            width: 35%;
-          }
-        }
-      }
     }
-    &:hover{
+
+    &:hover {
       background: rgb(247 247 247);
     }
   }

@@ -5,7 +5,8 @@ export interface FeedData {
   img: string;
   upvoteCount: number;
   commentCount: number;
-  comment: Comment[]
+  isEditing ?: boolean;
+  comment: Comment[];
 }
 
 export interface Comment {
@@ -13,4 +14,5 @@ export interface Comment {
   title: string;
   body: string;
   upvote: number;
+  // hiddenComments ?: boolean[];
 }

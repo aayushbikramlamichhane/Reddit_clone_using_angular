@@ -1,0 +1,7 @@
+@import '../../../../assets/scss/display';
+
+.popup-component{
+    @include flex-column(column, 5px);
+    position: absolute;
+    left: -20px;
+}

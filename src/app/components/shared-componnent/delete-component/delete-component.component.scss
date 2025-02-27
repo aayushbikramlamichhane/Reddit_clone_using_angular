@@ -1,0 +1,16 @@
+@import '../../../../assets/scss/display';
+.delete-component{
+    @include flex-column(column, 1rem);
+    align-items: center;
+
+    .delete-button{
+        @include flex-column(row, 1rem);
+        justify-content: center;
+        width: 50%;
+
+        .yes-button,
+        .no-button {
+            width: 20%;
+        }
+    }
+}
