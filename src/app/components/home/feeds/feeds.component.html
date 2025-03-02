@@ -6,26 +6,25 @@
             </app-logocontent>
 
             <div class="ellipse-icon">
-                <app-ellipse-icon (iconClick)="onClick(i)">
-
+                <app-ellipse-icon (iconClick)="iconClick(i)">
                 </app-ellipse-icon>
 
                 <div class="popup-content" [ngStyle]="{display : displayPopup[i] ? 'block' : 'none'}">
-                    <app-popup [i]="i" [displayContent]="displayContent" [displayPopup]="displayPopup">
-
+                    <app-popup [i]="i" [displayContent]="displayContent" [displayPopup]="displayPopup" [id]="item.id">
                     </app-popup>
                 </div>
             </div>
         </div>
 
-        <div class="feed-display" [ngStyle]="{display: !displayContent[i] ? '': 'none'}">
-            <app-feed-item [item]="item"></app-feed-item>
+        <div *ngIf="!displayContent[i]; else elseBlock">
+            <app-feed-item [item]="item">
+            </app-feed-item>
         </div>
 
-        <div class="delete-display" [ngStyle]="{display: displayContent[i] ? '': 'none'}">
-            <app-delete-component [displayContent]="displayContent" [i] = "i">
+        <ng-template #elseBlock>
+            <app-delete-component [displayContent]="displayContent" [i]="i">
             </app-delete-component>
-        </div>
+        </ng-template>
 
 
         <div class="comment-section">
@@ -39,7 +38,6 @@
 
         <div class="comment-container" [ngStyle]="{display: hiddenComments[i]? 'block' : 'none'}">
             <app-edit-comment [item]="item" [i]="i">
-
             </app-edit-comment>
         </div>
     </div>

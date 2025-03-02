@@ -1,4 +1,5 @@
 export interface FeedData {
+  id: number;
   logo: string;
   name: string;
   content: string;

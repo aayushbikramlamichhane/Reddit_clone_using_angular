@@ -19,7 +19,7 @@ export const routes: Routes = [
   },
   {
     path: routesPath.MANAGE_FEEDS,
-    component: routesComponent.MANAGE_FEEDS_COMONENT,
+    component: routesComponent.MANAGE_FEEDS_COMPONENT,
     canActivate: [authGuard]
   },
   {
@@ -27,13 +27,14 @@ export const routes: Routes = [
     redirectTo: routesPath.LOGIN,
     pathMatch: 'full',
   },
-  // {
-  //   path: routesPath.REGISTERACCOUNT,
-  //   component: routesComponent.REGISTERCOMPONENT
-  // }
   {
     path: routesPath.CREATE_USER_ACCOUNT,
-    component: routesComponent.CREATE_USER_COMONENT,
+    component: routesComponent.CREATE_USER_COMPONENT,
     // canActivate: [authGuard]
+  },
+  {
+    path: routesPath.EDIT_SECTION,
+    component: routesComponent.EDIT_SECTION_COMPONENT,
+    canActivate: [authGuard]
   },
 ];

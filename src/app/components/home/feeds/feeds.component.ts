@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { FEED_DATA } from '../../../constants/feeds-constants';
 import { FeedData } from 'src/app/models/feed-data';
+import { FeedsApiServiceService } from './services/feeds-api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feeds',
@@ -13,18 +13,21 @@ export class FeedsComponent implements OnInit {
   hiddenComments: boolean[] = [];
   data: FeedData[] = [];
   displayPopup: boolean[] = [];
-  displayContent : boolean[] = []
+  displayContent: boolean[] = [];
 
-  feeds: FeedData[] = FEED_DATA;
 
-  myData = of(this.feeds);
-
+  constructor(
+    
+    private feedsApiService: FeedsApiServiceService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.getData();
+    
   }
 
   getData() {
-    this.myData.subscribe({
+    this.feedsApiService.fetchFeedsLists().subscribe({
       next: (val: FeedData[]) => {
         this.data = val;
         this.data.forEach((item) => {
@@ -45,7 +48,7 @@ export class FeedsComponent implements OnInit {
     // console.log(i);
   }
 
-  onClick(i: number) {
+  iconClick(i: number) {
     this.displayPopup[i] = !this.displayPopup[i];
   }
 }

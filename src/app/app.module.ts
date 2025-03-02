@@ -34,6 +34,7 @@ import { EllipseIconComponent } from './components/home/feeds/components/ellipse
 import { EditCommentComponent } from './components/home/feeds/components/edit-comment/edit-comment.component';
 import { PopupComponent } from './components/shared-componnent/popup/popup.component';
 import { DeleteComponentComponent } from './components/shared-componnent/delete-component/delete-component.component';
+import { EditSectionComponent } from './components/home/edit-section/edit-section.component';
 
 
 
@@ -68,7 +69,8 @@ import { DeleteComponentComponent } from './components/shared-componnent/delete-
     EllipseIconComponent,
     EditCommentComponent,
     PopupComponent,
-    DeleteComponentComponent
+    DeleteComponentComponent,
+    EditSectionComponent
   ],
   imports: [
     BrowserModule,

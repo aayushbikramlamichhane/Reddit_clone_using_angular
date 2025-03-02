@@ -1,5 +1,5 @@
-<div class="form-container">
-    <form [formGroup]="manageFeedsForm" (ngSubmit)="onManage()" class="form">
+<div class="form-container" >
+    <form [formGroup]="manageFeedsForm" (ngSubmit)="onManage()" class="form" >
         <div class="form-content">
             <span class="span-feeds">Create New Feeds</span>
             <div formArrayName="content">
@@ -24,7 +24,8 @@
                     <div class="form-control">
                         <label>Name</label>
                         <input type="text" formControlName="name" class="input-value">
-                        <div class="error-name" *ngIf="getControl(i, 'name')?.invalid && getControl(i, 'name')?.touched">
+                        <div class="error-name"
+                            *ngIf="getControl(i, 'name')?.invalid && getControl(i, 'name')?.touched">
                             <span *ngIf="getControl(i, 'name')?.hasError('maxLength')">
                                 *Name should not exceed 50 characters.
                             </span>
@@ -39,31 +40,25 @@
                     <div class="form-control">
                         <label>Body</label>
                         <input type="text" formControlName="body" class="input-value">
-                        <div class="error-body" *ngIf="getControl(i, 'body')?.invalid && getControl(i, 'body')?.touched">
-                        
+                        <div class="error-body"
+                            *ngIf="getControl(i, 'body')?.invalid && getControl(i, 'body')?.touched">
+
                             <span *ngIf="getControl(i, 'body')?.hasError('required')">
                                 *Body is required
                             </span>
-                        
+
                         </div>
                     </div>
 
                     <div class="form-control">
                         <label for="">Image</label>
                         <select formControlName="images" class="select-image">
-                        
+
                             <ng-container *ngFor="let image of images">
                                 <option [value]="image.img">{{image.img}}</option>
                             </ng-container>
-                        
+
                         </select>
-                        <!-- <div class="error-body" *ngIf="getControl(i, 'images')?.invalid && getControl(i, 'images')?.touched">
-                        
-                            <span *ngIf="getControl(i, 'images')?.hasError('required')">
-                                *Image is required
-                            </span>
-                        
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -71,6 +66,7 @@
                 <app-button type="button" (onClick)="addContent()" styles="primary">
                     Create Feeds
                 </app-button>
+
                 <app-button type="submit" styles="third">
                     Add Feeds
                 </app-button>

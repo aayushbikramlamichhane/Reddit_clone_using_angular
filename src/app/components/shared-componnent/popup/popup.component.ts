@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { FEED_DATA } from 'src/app/constants/feeds-constants';
-import { FeedData } from 'src/app/models/feed-data';
+import { Router } from '@angular/router';
+import { FeedsApiServiceService } from '../../home/feeds/services/feeds-api-service.service';
 
 @Component({
   selector: 'app-popup',
@@ -8,17 +8,40 @@ import { FeedData } from 'src/app/models/feed-data';
   styleUrls: ['./popup.component.scss'],
 })
 export class PopupComponent {
+  @Input() id !: number;
   @Input() i!: number;
   @Input() displayContent: boolean[] = [];
-  @Input() displayPopup : boolean[] = []
+  @Input() displayPopup: boolean[] = [];
 
-  feeds: FeedData[] = FEED_DATA;
+  // feed?: FeedData[] = FEED_DATA;
+
+  constructor(
+    private router: Router,
+    private feedService: FeedsApiServiceService
+  ) {}
+
+  ngOnInit(): void {}
 
   deleteFeed(i: number) {
-    console.log(i);
-    // this.feeds.splice(i, 1);
     this.displayContent[i] = !this.displayContent[i];
     this.displayPopup[i] = !this.displayPopup[i];
     console.log(this.displayContent[i]);
+  }
+
+  editFeed() {
+      this.feedService.fetchFeedById(this.id).subscribe((item) => {
+        if (item) {
+          this.router.navigate(['/edit', item.id]);
+          // this.router.navigate(['edit'],{
+          //   queryParams: {
+          //     id: item.id
+          //   }
+          // })
+        }
+      });
+
+      
+      
+    // this.router.navigate(['/edit', this.id]);
   }
 }

@@ -2,6 +2,7 @@ import { FeedData } from "../models/feed-data";
 
 export const FEED_DATA: FeedData[] = [
   {
+    id: 0,
     logo: 'L',
     name: 'Luffy',
     content: 'Kaizoku ou ni ore wa naru',
@@ -25,6 +26,7 @@ export const FEED_DATA: FeedData[] = [
   },
 
   {
+    id: 11,
     logo: 'Z',
     name: 'Zoro',
     content: 'Scars on the back are a swordsman shame',
@@ -47,6 +49,7 @@ export const FEED_DATA: FeedData[] = [
     ],
   },
   {
+    id: 2,
     logo: 'N',
     name: 'Naruto',
     content: 'Watashi wa hokage ni naru',
@@ -69,6 +72,7 @@ export const FEED_DATA: FeedData[] = [
     ],
   },
   {
+    id: 3,
     logo: 'M',
     name: 'Maskman',
     content: 'No one cared until I started wearing mask',
@@ -78,6 +82,7 @@ export const FEED_DATA: FeedData[] = [
     comment: [],
   },
   {
+    id: 4,
     logo: 'M',
     name: 'ManchesterUnited',
     content: 'Manchester United #ggmu',
@@ -87,6 +92,7 @@ export const FEED_DATA: FeedData[] = [
     comment: [],
   },
   {
+    id: 5,
     logo: 'O',
     name: 'OnePiece',
     content: 'The One Piece is Real',
@@ -96,6 +102,7 @@ export const FEED_DATA: FeedData[] = [
     comment: [],
   },
   {
+    id: 6,
     logo: 'B',
     name: 'BatMan',
     content: 'The World only make sense, If you force it to',

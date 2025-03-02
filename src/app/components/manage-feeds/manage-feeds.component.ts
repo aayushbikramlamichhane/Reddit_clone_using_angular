@@ -37,7 +37,6 @@ export class ManageFeedsComponent implements OnInit {
   ngOnInit(): void {
     this.initializeManageFeeds();
     this.addContent();
-    // this.patchImage();
   }
 
   initializeManageFeeds() {
@@ -53,10 +52,6 @@ export class ManageFeedsComponent implements OnInit {
   get content(): FormArray {
     return this.manageFeedsForm.get('content') as FormArray;
   }
-
-  // patchImage() {
-  //   this.content.get('images')?.patchValue('../../../assets/images/bat.jpg');
-  // }
 
   addContent() {
     this.content.push(
@@ -80,6 +75,7 @@ export class ManageFeedsComponent implements OnInit {
 
     this.content.value.forEach((item: any) => {
       this.feed.unshift({
+        id: item?.id,
         logo: item?.logo,
         name: item?.name,
         content: item?.body,
@@ -93,5 +89,31 @@ export class ManageFeedsComponent implements OnInit {
 
     console.log(this.feed);
     this.router.navigate(['/home']);
+  }
+
+  editFeed(index: number) {
+    const feedItem = this.feed[index];
+    this.content.clear(); // Clear previous values
+
+    this.content.push(
+      this.fb.group({
+        logo: [feedItem.logo, [Validators.required, Validators.maxLength(1)]],
+        name: [feedItem.name, [Validators.required, nameValidator()]],
+        body: [feedItem.content, [Validators.required]],
+        images: [feedItem.img, [Validators.required]],
+        upvoteCount: [feedItem.upvoteCount],
+        commentCount: [feedItem.commentCount],
+        comment: this.fb.array(
+          feedItem.comment.map((c) =>
+            this.fb.group({
+              logo: [c.logo],
+              title: [c.title],
+              body: [c.body],
+              upvote: [c.upvote],
+            })
+          )
+        ),
+      })
+    );
   }
 }
