@@ -1,21 +1,7 @@
 <div class="feeds-object">
     <div class="feeds-content">
         <div class="feed-edit">
-            <p *ngIf="!isEditing" (click)="onEdit()">{{item.content}}</p>
-            <input *ngIf="isEditing" [(ngModel)]="editedBody" class="edit-input" />
-        </div>
-        <div class="app-button">
-            <div class="save-button">
-                <app-button *ngIf="isEditing" type="button" styles="primary" (onClick)="saveEdit()">
-                    Save
-                </app-button>
-            </div>
-
-            <div class="cancel-button" *ngIf="isEditing">
-                <app-button type="button" (onClick)="cancelEdit()" styles="fourth">
-                    Cancel
-                </app-button>
-            </div>
+            <p>{{item.content}}</p>
         </div>
     </div>
     <img [src]="item.img" alt="">

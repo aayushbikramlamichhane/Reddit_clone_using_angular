@@ -29,19 +29,16 @@ export class PopupComponent {
   }
 
   editFeed() {
-      this.feedService.fetchFeedById(this.id).subscribe((item) => {
-        if (item) {
-          this.router.navigate(['/edit', item.id]);
+      // this.feedService.fetchFeedById(this.id).subscribe((item) => {
+        // if (item) {
+          // this.router.navigate(['/edit', item.id]);
           // this.router.navigate(['edit'],{
           //   queryParams: {
           //     id: item.id
           //   }
           // })
-        }
-      });
-
-      
-      
-    // this.router.navigate(['/edit', this.id]);
+        // }
+      // });
+    this.router.navigate(['/edit', this.id]);
   }
 }

@@ -8,25 +8,4 @@ import { FeedData } from 'src/app/models/feed-data';
 })
 export class FeedItemComponent {
   @Input() item!: FeedData;
-
-  // isEditing: boolean = false;
-  editedBody: string = '';
-  isEditing = this.item?.isEditing
-
-  onEdit() {
-    this.isEditing = !this.isEditing;
-    // this.item.isEditing = !this.item?.isEditing;
-    this.editedBody = this.item.content;
-  }
-
-  saveEdit() {
-    this.item.content = this.editedBody;
-    this.isEditing = !this.isEditing;
-    // this.item.isEditing = !this.item?.isEditing;
-  }
-
-  cancelEdit() {
-    this.isEditing = !this.isEditing;
-    // this.item.isEditing = !this.item?.isEditing;
-  }
 }
