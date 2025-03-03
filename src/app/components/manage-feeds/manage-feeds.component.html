@@ -3,7 +3,7 @@
         <div class="form-content">
             <span class="span-feeds">Create New Feeds</span>
             <div formArrayName="content">
-                <div *ngFor="let item of content.controls; let i = index;" [formGroupName]="i" class="form-group">
+                <div *ngFor="let item of formContent.controls; let i = index;" [formGroupName]="i" class="form-group">
                     <p>Form no: {{ i + 1 }}</p>
                     <div class="form-control">
                         <label for="logo">Logo</label>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-control">
                         <label>Body</label>
-                        <input type="text" formControlName="body" class="input-value">
+                        <input type="text" formControlName="content" class="input-value">
                         <div class="error-body"
                             *ngIf="getControl(i, 'body')?.invalid && getControl(i, 'body')?.touched">
 
@@ -52,7 +52,7 @@
 
                     <div class="form-control">
                         <label for="">Image</label>
-                        <select formControlName="images" class="select-image">
+                        <select formControlName="img" class="select-image">
 
                             <ng-container *ngFor="let image of images">
                                 <option [value]="image.img">{{image.img}}</option>

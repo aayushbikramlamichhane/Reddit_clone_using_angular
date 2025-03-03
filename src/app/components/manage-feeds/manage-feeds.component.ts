@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FEED_DATA } from 'src/app/constants/feeds-constants';
 import { FeedData } from 'src/app/models/feed-data';
 import { nameValidator } from 'src/app/validators/name.validator';
+import { FormFeedsService } from './service/form-feeds.service';
 // import { numberValidator } from 'src/app/validators/number.validator';
 
 @Component({
@@ -32,7 +33,11 @@ export class ManageFeedsComponent implements OnInit {
     },
   ];
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private formFeedService: FormFeedsService
+  ) {}
 
   ngOnInit(): void {
     this.initializeManageFeeds();
@@ -40,30 +45,32 @@ export class ManageFeedsComponent implements OnInit {
   }
 
   initializeManageFeeds() {
-    this.manageFeedsForm = this.fb.group({
-      content: this.fb.array([]),
-    });
+    // this.manageFeedsForm = this.fb.group({
+    //   content: this.fb.array([])
+    // });
+    this.manageFeedsForm = this.formFeedService.initializeForm();
   }
 
   getControl(index: number, field: string) {
-    return (this.content.at(index) as FormGroup).get(field);
+    return (this.formContent.at(index) as FormGroup).get(field);
   }
 
-  get content(): FormArray {
+  get formContent(): FormArray {
     return this.manageFeedsForm.get('content') as FormArray;
   }
 
   addContent() {
-    this.content.push(
-      this.fb.group({
-        logo: ['', [Validators.required, Validators.maxLength(1)]],
-        name: ['', [Validators.required, nameValidator()]],
-        body: ['', [Validators.required]],
-        images: ['../../../assets/images/bat.jpg', [Validators.required]],
-        upvoteCount: [0],
-        commentCount: [0],
-        comment: this.fb.array([]),
-      })
+    this.formContent.push(
+      // this.fb.group({
+      //   logo: ['', [Validators.required, Validators.maxLength(1)]],
+      //   name: ['', [Validators.required, nameValidator()]],
+      //   content: ['', [Validators.required]],
+      //   img: ['../../../assets/images/bat.jpg', [Validators.required]],
+      //   upvoteCount: [0],
+      //   commentCount: [0],
+      //   comment: this.fb.array([]),
+      // })
+      this.formFeedService.formControls()
     );
   }
 
@@ -73,47 +80,7 @@ export class ManageFeedsComponent implements OnInit {
       return;
     }
 
-    this.content.value.forEach((item: any) => {
-      this.feed.unshift({
-        id: item?.id,
-        logo: item?.logo,
-        name: item?.name,
-        content: item?.body,
-        img: item?.images,
-        upvoteCount: item?.upvoteCount,
-        commentCount: item?.commentCount,
-        comment: item?.comment,
-      });
-    });
-    console.log(this.content);
-
-    console.log(this.feed);
+    this.formFeedService.manageContent(this.formContent.value);
     this.router.navigate(['/home']);
-  }
-
-  editFeed(index: number) {
-    const feedItem = this.feed[index];
-    this.content.clear(); // Clear previous values
-
-    this.content.push(
-      this.fb.group({
-        logo: [feedItem.logo, [Validators.required, Validators.maxLength(1)]],
-        name: [feedItem.name, [Validators.required, nameValidator()]],
-        body: [feedItem.content, [Validators.required]],
-        images: [feedItem.img, [Validators.required]],
-        upvoteCount: [feedItem.upvoteCount],
-        commentCount: [feedItem.commentCount],
-        comment: this.fb.array(
-          feedItem.comment.map((c) =>
-            this.fb.group({
-              logo: [c.logo],
-              title: [c.title],
-              body: [c.body],
-              upvote: [c.upvote],
-            })
-          )
-        ),
-      })
-    );
   }
 }

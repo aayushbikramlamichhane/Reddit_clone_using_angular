@@ -3,7 +3,7 @@ import { HomeComponent } from './../components/home/home.component';
 import { FeedsComponent } from "../components/home/feeds/feeds.component";
 import { CreateUserComponent } from "../components/create-user/create-user.component";
 import { ManageFeedsComponent } from "../components/manage-feeds/manage-feeds.component";
-import { EditSectionComponent } from "../components/home/edit-section/edit-section.component";
+import { EditSectionComponent } from "../components/manage-feeds/components/edit-section/edit-section.component";
 
 export const routesPath = {
   LOGIN: 'login',
