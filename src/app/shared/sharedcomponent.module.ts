@@ -10,6 +10,7 @@ import { LogocontentComponent } from './components/logocontent/logocontent.compo
 import { LogoComponent } from './components/logo/logo.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { UpvotesComponent } from './components/upvotes/upvotes.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -22,6 +23,7 @@ import { UpvotesComponent } from './components/upvotes/upvotes.component';
     LogoComponent,
     PopupComponent,
     UpvotesComponent,
+    NavbarComponent
   ],
   imports: [CommonModule, FormsModule],
   exports: [
@@ -32,6 +34,7 @@ import { UpvotesComponent } from './components/upvotes/upvotes.component';
     LogoComponent,
     PopupComponent,
     UpvotesComponent,
+    NavbarComponent
   ]
 })
 export class SharedcomponentModule {}

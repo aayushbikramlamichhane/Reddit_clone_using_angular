@@ -5,22 +5,19 @@ import { authGuard } from "./shared/guards/auth-guards.guard";
 export const routes: Routes = [
   {
     path: routesPath.LOGIN,
-    component: routesComponent.LOGIN_COMPONENT
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: routesPath.HOME,
-    component: routesComponent.HOME_COMPONENT,
-    canActivate: [authGuard]
-  },
-  {
-    path: routesPath.FEEDS,
-    component: routesComponent.FEEDS_COMPONENT,
     canActivate: [authGuard],
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: routesPath.MANAGE_FEEDS,
     component: routesComponent.MANAGE_FEEDS_COMPONENT,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
   {
     path: '',
@@ -30,11 +27,10 @@ export const routes: Routes = [
   {
     path: routesPath.CREATE_USER_ACCOUNT,
     component: routesComponent.CREATE_USER_COMPONENT,
-    // canActivate: [authGuard]
   },
   {
     path: routesPath.EDIT_SECTION,
     component: routesComponent.EDIT_SECTION_COMPONENT,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
 ];

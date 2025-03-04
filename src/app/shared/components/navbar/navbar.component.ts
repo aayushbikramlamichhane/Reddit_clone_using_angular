@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { routesPath } from 'src/app/constants/route-constants';
-
 import { Router } from '@angular/router';
 import { FEED_DATA } from 'src/app/shared/constants/feeds-constants';
 import { FeedData } from 'src/app/shared/models/feed-data';

@@ -11,12 +11,12 @@ import { IconComponent } from './header/icon/icon.component';
 import { HistoryComponent } from './history/history.component';
 import { ManageFeedsComponent } from './manage-feeds/manage-feeds.component';
 import { EditSectionComponent } from './manage-feeds/components/edit-section/edit-section.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { UsernameComponent } from './username/username.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedcomponentModule } from 'src/app/shared/sharedcomponent.module';
 import { RedditComponent } from './reddit/reddit.component';
 import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
@@ -32,7 +32,6 @@ import { HomeComponent } from './home.component';
     HistoryComponent,
     ManageFeedsComponent,
     EditSectionComponent,
-    NavbarComponent,
     UsernameComponent,
     RedditComponent,
     HomeComponent
@@ -42,6 +41,7 @@ import { HomeComponent } from './home.component';
     FormsModule,
     ReactiveFormsModule,
     SharedcomponentModule,
+    HomeRoutingModule
   ],
 })
 export class HomeModule {}

@@ -5,7 +5,9 @@ import { ImageComponent } from './login/image/image.component';
 import { LayoutComponent } from './login/layout/layout.component';
 import { LogoutComponent } from './logout/logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
 import { SharedcomponentModule } from 'src/app/shared/sharedcomponent.module';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 
@@ -15,13 +17,14 @@ import { SharedcomponentModule } from 'src/app/shared/sharedcomponent.module';
     ImageComponent,
     LayoutComponent,
     LogoutComponent,
-
+    CreateUserComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedcomponentModule
-  ]
+    AuthRoutingModule,
+    SharedcomponentModule,
+  ],
 })
 export class AuthModule { }

@@ -1,5 +1,5 @@
 import { LoginComponent } from "src/app/pages/auth/login/login.component";
-import { CreateUserComponent } from "src/app/pages/create-user/create-user.component";
+import { CreateUserComponent } from "src/app/pages/auth/create-user/create-user.component";
 import { FeedsComponent } from "src/app/pages/home/feeds/feeds.component";
 import { HomeComponent } from "src/app/pages/home/home.component";
 import { EditSectionComponent } from "src/app/pages/home/manage-feeds/components/edit-section/edit-section.component";

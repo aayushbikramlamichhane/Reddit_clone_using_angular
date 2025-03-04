@@ -5,27 +5,23 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthModule } from './pages/auth/auth.module';
-import { CreateUserModule } from './pages/create-user/create-user.module';
 import { SharedcomponentModule } from './shared/sharedcomponent.module';
+import { AuthModule } from './pages/auth/auth.module';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HomeModule,
     ReactiveFormsModule,
     FormsModule,
-    AuthModule,
-    CreateUserModule,
     SharedcomponentModule,
-    RouterModule
+    RouterModule.forRoot(routes),
+    AuthModule
   ],
-  providers: [provideRouter(routes)],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
