@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FEED_DATA } from 'src/app/shared/constants/feeds-constants';
 import { FeedData } from 'src/app/shared/models/feed-data';
+import { SnackbarService } from '../../services/snackbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -28,9 +29,11 @@ export class NavbarComponent {
       name: 'Feeds',
     },
   ];
-  constructor(private router: Router) {}
+  constructor(private router: Router,private snackBar: SnackbarService) {}
 
   manageFeeds() {
     this.router.navigate(['/manage-feeds']);
+    this.snackBar.openSnackBar("Add Feeds","Ok")
   }
+
 }

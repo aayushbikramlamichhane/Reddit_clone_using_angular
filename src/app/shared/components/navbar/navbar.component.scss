@@ -20,4 +20,8 @@
       background: rgb(228, 234, 238);
     }
   }
+
+  .manage-container{
+    @include flex-column(column, 10px);
+  }
 }

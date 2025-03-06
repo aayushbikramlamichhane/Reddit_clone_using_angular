@@ -8,8 +8,8 @@
 @mixin inputfield() {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  height: 20%;
+  // gap: 4px;
+  // height: 20%;
 }
 
 .register-container {
@@ -22,20 +22,14 @@
   form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    border: 1px solid black;
+    gap: 7px;
+    // border: 1px solid black;
     width: 30%;
     padding: 5px;
-    height: 50%;
+    
 
-    .username-input,
-    .email-input,
-    .password-input {
-      @include inputfield();
-
-      input {
-        @include input()
-      }
+    .example-full-width {
+      width: 100%;
     }
 
     .gender-field {
@@ -62,7 +56,6 @@
       display: flex;
       justify-content: center;
       width: 100%;
-      height: 10%;
 
       button {
         background: #0866ff;
@@ -70,6 +63,7 @@
         cursor: pointer;
         border: none;
         width: 30%;
+        height: 35px;
         border-radius: 5px;
 
         &:hover {

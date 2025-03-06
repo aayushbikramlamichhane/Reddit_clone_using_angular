@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: routesPath.LOGIN,
     loadChildren: () =>
-      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+      import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: routesPath.HOME,
@@ -33,4 +33,8 @@ export const routes: Routes = [
     component: routesComponent.EDIT_SECTION_COMPONENT,
     canActivate: [authGuard],
   },
+  {
+    path: routesPath.PAGE_NOT_FOUND,
+    component: routesComponent.PAGE_NOT_FOUND_COMPONENT
+  }
 ];

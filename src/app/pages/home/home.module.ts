@@ -17,6 +17,7 @@ import { SharedcomponentModule } from 'src/app/shared/sharedcomponent.module';
 import { RedditComponent } from './reddit/reddit.component';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { AuthModule } from 'src/app/auth/auth.module';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { HomeRoutingModule } from './home-routing.module';
     FormsModule,
     ReactiveFormsModule,
     SharedcomponentModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    AuthModule
   ],
 })
 export class HomeModule {}

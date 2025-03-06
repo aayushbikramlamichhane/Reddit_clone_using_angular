@@ -1,0 +1,74 @@
+<div class="register-container">
+  <form [formGroup]="registerFormGroup" (ngSubmit)="onCreate()">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input type="Username" matInput placeholder="Username" formControlName="username">
+
+      <mat-error *ngIf="getControl('username')?.hasError('required')">
+        *Username is required
+      </mat-error>
+
+      <mat-error *ngIf="getControl('username')?.hasError('username')">
+        *Please enter a valid username
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+
+      <mat-error *ngIf="getControl('email')?.hasError('required')">
+        *Email is <strong>required</strong>
+      </mat-error>
+
+      <mat-error *ngIf="getControl('email')?.hasError('invalidEmail') && getControl('email')?.touched">
+        *Please enter a valid  email
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password">
+
+      <mat-error *ngIf="getControl('password')?.hasError('required')">
+        *Password is required
+      </mat-error>
+
+      <mat-error *ngIf="getControl('password')?.hasError('invalidPassword') && getControl('password')?.touched">
+        *Please enter a valid password
+      </mat-error>
+    </mat-form-field>
+
+    <div class="gender-field">
+      <div class="gender-label">
+        <mat-label>Gender:</mat-label>
+        <mat-radio-group formControlName="genders">
+          <mat-radio-button *ngFor="let item of genders" [value]="item.value">
+            {{ item.value }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+
+  <mat-form-field>
+    <mat-label>Select a Occupation</mat-label>
+    <mat-select formControlName="occupations">
+      <mat-option *ngFor="let occupation of occupations" [value]="occupation.value">
+        {{ occupation.slug }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="getControl('occupations')?.hasError('required')" >
+      *Please select an occupation
+    </mat-error>
+  </mat-form-field>
+
+
+    <div class="register-button">
+      <button mat-raised-button type="submit">Register</button>
+    </div>
+  </form>
+</div>

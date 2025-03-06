@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormFeedsService } from './service/form-feeds.service';
 import { FEED_DATA } from 'src/app/shared/constants/feeds-constants';
 import { FeedData } from 'src/app/shared/models/feed-data';
-// import { numberValidator } from 'src/app/validators/number.validator';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 
 @Component({
   selector: 'app-manage-feeds',
@@ -14,6 +14,7 @@ import { FeedData } from 'src/app/shared/models/feed-data';
 export class ManageFeedsComponent implements OnInit {
   manageFeedsForm!: FormGroup;
   feed: FeedData[] = FEED_DATA;
+  displayFeeds!: boolean;
   images = [
     {
       img: '../../../assets/images/man.jpg',
@@ -33,9 +34,9 @@ export class ManageFeedsComponent implements OnInit {
   ];
 
   constructor(
-    private fb: FormBuilder,
     private router: Router,
-    private formFeedService: FormFeedsService
+    private formFeedService: FormFeedsService,
+    private snackbar: SnackbarService
   ) {}
 
   ngOnInit(): void {
@@ -56,27 +57,19 @@ export class ManageFeedsComponent implements OnInit {
   }
 
   addContent() {
-    this.formContent.push(
-      // this.fb.group({
-      //   logo: ['', [Validators.required, Validators.maxLength(1)]],
-      //   name: ['', [Validators.required, nameValidator()]],
-      //   content: ['', [Validators.required]],
-      //   img: ['../../../assets/images/bat.jpg', [Validators.required]],
-      //   upvoteCount: [0],
-      //   commentCount: [0],
-      //   comment: this.fb.array([]),
-      // })
-      this.formFeedService.formControls()
-    );
+    this.formContent.push(this.formFeedService.formControls());
   }
 
   onManage() {
     if (this.manageFeedsForm.invalid) {
       this.manageFeedsForm.markAllAsTouched();
+      this.snackbar.openSnackBar('wrong credentials', 'ok');
       return;
     }
 
     this.formFeedService.manageContent(this.formContent.value);
+    // this.displayFeeds = !this.displayFeeds;
     this.router.navigate(['/home']);
+    this.snackbar.openSnackBar('Feeds Added', 'Add');
   }
 }
