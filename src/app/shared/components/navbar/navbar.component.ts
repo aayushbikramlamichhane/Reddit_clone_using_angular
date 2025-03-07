@@ -33,7 +33,12 @@ export class NavbarComponent {
 
   manageFeeds() {
     this.router.navigate(['/manage-feeds']);
-    this.snackBar.openSnackBar("Add Feeds","Ok")
+    this.snackBar.openCustomeSnackBar(
+      'report_problem',
+      'Add Feeds',
+      'X',
+      'success'
+    );
   }
 
 }

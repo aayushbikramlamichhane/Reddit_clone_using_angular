@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   Validators,
-  FormArray,
   FormGroup,
 } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -55,7 +54,6 @@ export class CreateUserComponent implements OnInit {
       username: ['', [Validators.required]],
       email: ['', [Validators.required, customEmailValidator()]],
       password: ['', [Validators.required, customPasswordValidator()]],
-      // gender: this.fb.array([]),
       genders: ['', [Validators.required]],
       occupations: ['', [Validators.required]],
     });
@@ -69,7 +67,12 @@ export class CreateUserComponent implements OnInit {
   onCreate() {
     console.log(this.registerFormGroup?.value);
     if (this.registerFormGroup.invalid) {
-      this.snackBar.openSnackBar("Wrong Credentials","X")
+      this.snackBar.openCustomeSnackBar(
+        'report_problem',
+        'Wrong',
+        'X',
+        'failed'
+      );
       return;
     }
     this.router.navigate(['/'])

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { DeleteComponentComponent } from './components/delete-component/delete-component.component';
@@ -13,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatModule } from './module/mat.module';
 import { LogoutComponent } from '../auth/logout/logout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
 
 
 
@@ -28,7 +28,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     UpvotesComponent,
     NavbarComponent,
     LogoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CustomSnackbarComponent,
   ],
   imports: [CommonModule, FormsModule, MatModule],
   exports: [
@@ -41,6 +42,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     UpvotesComponent,
     NavbarComponent,
     MatModule,
+    CustomSnackbarComponent,
   ],
 })
 export class SharedcomponentModule {}

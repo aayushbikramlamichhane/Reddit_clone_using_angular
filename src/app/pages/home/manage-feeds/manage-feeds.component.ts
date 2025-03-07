@@ -36,7 +36,7 @@ export class ManageFeedsComponent implements OnInit {
   constructor(
     private router: Router,
     private formFeedService: FormFeedsService,
-    private snackbar: SnackbarService
+    private snackBar: SnackbarService
   ) {}
 
   ngOnInit(): void {
@@ -63,13 +63,22 @@ export class ManageFeedsComponent implements OnInit {
   onManage() {
     if (this.manageFeedsForm.invalid) {
       this.manageFeedsForm.markAllAsTouched();
-      this.snackbar.openSnackBar('wrong credentials', 'ok');
+      this.snackBar.openCustomeSnackBar(
+        'report_problem',
+        'Wrong Credentials',
+        'X',
+        'failed'
+      );
       return;
     }
 
     this.formFeedService.manageContent(this.formContent.value);
-    // this.displayFeeds = !this.displayFeeds;
     this.router.navigate(['/home']);
-    this.snackbar.openSnackBar('Feeds Added', 'Add');
+    this.snackBar.openCustomeSnackBar(
+      'report_problem',
+      'Feeds Added',
+      'X',
+      'success'
+    );
   }
 }

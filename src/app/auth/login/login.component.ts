@@ -33,7 +33,12 @@ export class LoginComponent {
     if (this.userForm.invalid) {
       console.log(this.userForm);
       this.userForm.markAllAsTouched();
-      this.snackBar.openSnackBar("Wrong User or Password","Wrong")
+      this.snackBar.openCustomeSnackBar(
+        'report_problem',
+        'Wrong User',
+        'X',
+        'failed'
+      );
       return;
     }
     this.authService.onLoggedIn();
@@ -41,11 +46,22 @@ export class LoginComponent {
     console.log(`isLoggedin: ${this.authService.checkIfLoggedIn}`);
     localStorageItem('loggedIn', loggedIn);
     this.router.navigate([routesPath.HOME]);
-    this.snackBar.openSnackBar('Welcome', 'Hi');
+    this.snackBar.openCustomeSnackBar(
+      'done',
+      'Welcome To Home', 
+      'X', 
+      'success'
+    );
   }
 
   onRegister() {
     this.router.navigate([routesPath.CREATE_USER_ACCOUNT]);
-    this.snackBar.openSnackBar('Register User', 'Ok');
+    this.snackBar.openCustomeSnackBar(
+      'done', 
+      'Register User', 
+      'X', 
+      'success'
+    );
+    
   }
 }
