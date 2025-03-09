@@ -15,5 +15,4 @@ export interface Comment {
   title: string;
   body: string;
   upvote: number;
-  // hiddenComments ?: boolean[];
 }

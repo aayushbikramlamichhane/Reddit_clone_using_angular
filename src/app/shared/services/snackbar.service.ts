@@ -10,7 +10,7 @@ export class SnackbarService {
   constructor(private _snackbar: MatSnackBar) { }
 
 
-  openCustomeSnackBar(icon: string, message: string, action: string, type: string){
+  openCustomSnackBar(icon: string, message: string, action: string, type: string){
     this._snackbar.openFromComponent(CustomSnackbarComponent, {
       data: {
         class: type,

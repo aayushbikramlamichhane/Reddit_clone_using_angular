@@ -22,8 +22,6 @@
     .app-button {
       @include flex-column(row, 8px);
       width: 50%;
-
-      // border: 1px solid black;
       .save-button {
         width: 20%;
       }
@@ -38,5 +36,8 @@
   img {
     width: 100%;
     border-radius: 5px;
+  }
+  .blur {
+    filter: blur(1.5px);
   }
 }

@@ -1,8 +1,6 @@
 @import '../../../../assets/scss/display';
 @import '../../../../assets/scss/flex';
 .username-container {
-  // display: flex;
-  // gap: 5px;
   @include flex-column(row, 8px);
   height: 15px;
 

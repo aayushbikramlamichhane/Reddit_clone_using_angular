@@ -4,6 +4,6 @@
             <p>{{item.content}}</p>
         </div>
     </div>
-    <img [src]="item.img" alt="">
+    <img [src]="item.img" alt="" [ngClass]="blurContent[i] ? 'blur' : ''">
 
 </div>

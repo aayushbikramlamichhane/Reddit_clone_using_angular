@@ -7,6 +7,7 @@ import {
 import { Router } from '@angular/router';
 import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 import { customEmailValidator } from 'src/app/shared/validators/email.validators';
+import { nameValidator } from 'src/app/shared/validators/name.validator';
 import { customPasswordValidator } from 'src/app/shared/validators/password.validators';
 
 @Component({
@@ -51,7 +52,7 @@ export class CreateUserComponent implements OnInit {
 
   initializeFormGroup() {
     this.registerFormGroup = this.fb.group({
-      username: ['', [Validators.required]],
+      username: ['', [Validators.required, Validators.minLength(2),nameValidator()]],
       email: ['', [Validators.required, customEmailValidator()]],
       password: ['', [Validators.required, customPasswordValidator()]],
       genders: ['', [Validators.required]],
@@ -65,11 +66,11 @@ export class CreateUserComponent implements OnInit {
   }
 
   onCreate() {
-    console.log(this.registerFormGroup?.value);
+    console.log(this.registerFormGroup?.value?.username);
     if (this.registerFormGroup.invalid) {
-      this.snackBar.openCustomeSnackBar(
+      this.snackBar.openCustomSnackBar(
         'report_problem',
-        'Wrong',
+        'Wrong Credentials',
         'X',
         'failed'
       );

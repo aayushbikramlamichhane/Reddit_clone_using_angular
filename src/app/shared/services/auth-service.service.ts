@@ -9,7 +9,6 @@ export class AuthServiceService {
   constructor() {}
 
   onLoggedIn() {
-    // this.isLoggedIn = !this.isLoggedIn;
     this.isLoggedIn = !this.isLoggedIn;
   }
 

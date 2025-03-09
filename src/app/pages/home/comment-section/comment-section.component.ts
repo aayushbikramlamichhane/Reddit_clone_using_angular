@@ -14,7 +14,6 @@ export class CommentSectionComponent {
 
   isEditing: boolean = false;
   editedBody: string = '';
-  // isDeleted: boolean = false;
 
   onEdit() {
     this.isEditing = !this.isEditing;

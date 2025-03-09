@@ -7,9 +7,6 @@ export function nameValidator(): ValidatorFn {
     }
 
     const name = control.value.trim();
-    if (name.length > 50) {
-      return { maxLength: true };
-    }
     const nameRegex = /^[A-Z]/;
     if (!nameRegex.test(name)) {
       return { invalidName: true };

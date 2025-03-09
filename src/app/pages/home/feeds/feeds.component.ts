@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedsApiServiceService } from './services/feeds-api-service.service';
-import { Router } from '@angular/router';
 import { FeedData } from 'src/app/shared/models/feed-data';
 
 @Component({
@@ -14,12 +13,10 @@ export class FeedsComponent implements OnInit {
   data: FeedData[] = [];
   displayPopup: boolean[] = [];
   displayContent: boolean[] = [];
-
+  blurContent: boolean[] = [];
 
   constructor(
-    
-    private feedsApiService: FeedsApiServiceService,
-    private router: Router
+    private feedsApiService: FeedsApiServiceService
   ) {}
   ngOnInit(): void {
     this.getData();
@@ -45,10 +42,10 @@ export class FeedsComponent implements OnInit {
 
   displayComment(i: number) {
     this.hiddenComments[i] = !this.hiddenComments[i];
-    // console.log(i);
   }
 
   iconClick(i: number) {
     this.displayPopup[i] = !this.displayPopup[i];
+    this.blurContent[i] = !this.blurContent[i];
   }
 }
