@@ -14,6 +14,10 @@ import { customPasswordValidator } from 'src/app/shared/validators/password.vali
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  title !: string;
+  message !: string;
+  type !: string;
+
   constructor(
     public router: Router,
     private fb: FormBuilder,
@@ -31,11 +35,10 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.userForm.invalid) {
-      console.log(this.userForm);
       this.userForm.markAllAsTouched();
-      this.snackBar.openCustomeSnackBar(
+      this.snackBar.openCustomSnackBar(
         'report_problem',
-        'Wrong User',
+        'Wrong Credemtials',
         'X',
         'failed'
       );
@@ -43,25 +46,22 @@ export class LoginComponent {
     }
     this.authService.onLoggedIn();
     let loggedIn = this.authService.checkIfLoggedIn;
-    console.log(`isLoggedin: ${this.authService.checkIfLoggedIn}`);
     localStorageItem('loggedIn', loggedIn);
     this.router.navigate([routesPath.HOME]);
-    this.snackBar.openCustomeSnackBar(
+    this.snackBar.openCustomSnackBar(
       'done',
-      'Welcome To Home', 
-      'X', 
-      'success'
-    );
+      'Welcome To Home',
+      'X',
+      'success');
   }
 
   onRegister() {
     this.router.navigate([routesPath.CREATE_USER_ACCOUNT]);
-    this.snackBar.openCustomeSnackBar(
+    this.snackBar.openCustomSnackBar(
       'done', 
       'Register User', 
       'X', 
       'success'
     );
-    
   }
 }

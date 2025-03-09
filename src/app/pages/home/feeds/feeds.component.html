@@ -1,6 +1,6 @@
 <div class="feed-container">
     <h3>News Feeds</h3>
-    <div class="feeds-content" *ngFor="let item of data; let i = index;">
+    <div class="feeds-content"  *ngFor="let item of data; let i = index;">
         <div class="feeds-icon">
             <app-logocontent [logo]="item.logo" [title]="item.name">
             </app-logocontent>
@@ -17,12 +17,12 @@
         </div>
 
         <div *ngIf="!displayContent[i]; else elseBlock">
-            <app-feed-item [item]="item">
+            <app-feed-item [item]="item" [blurContent] = 'blurContent' [i]="i">
             </app-feed-item>
         </div>
 
         <ng-template #elseBlock>
-            <app-delete-component [displayContent]="displayContent" [i]="i">
+            <app-delete-component [blurContent] = 'blurContent'  [displayContent]="displayContent" [i]="i">
             </app-delete-component>
         </ng-template>
 
@@ -37,7 +37,7 @@
 
 
         <div class="comment-container" [ngStyle]="{display: hiddenComments[i]? 'block' : 'none'}">
-            <app-edit-comment [item]="item" [i]="i">
+            <app-edit-comment [item]="item" [i]="i" [hiddenComments]="hiddenComments">
             </app-edit-comment>
         </div>
     </div>

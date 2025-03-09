@@ -14,6 +14,26 @@ export class EditSectionComponent implements OnInit {
   editFeedsForm!: FormGroup;
   userId!: number;
   feedItem!: FeedData;
+  images = [
+    {
+      img: '../../../assets/images/man.jpg',
+    },
+    {
+      img: '../../../assets/images/bat.jpg',
+    },
+    {
+      img: '../../../assets/images/luffy.jpg',
+    },
+    {
+      img: '../../../assets/images/naruto.jpg',
+    },
+    {
+      img: '../../../assets/images/onepiece.jpeg',
+    },
+    {
+      img: '../../../assets/images/zoro.jpg'
+    }
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -56,7 +76,8 @@ export class EditSectionComponent implements OnInit {
             logo: this.feedItem?.logo,
             name: this.feedItem?.name,
             content: this.feedItem?.content,
-          }
+            img: this.feedItem?.img
+          },
         ]);
       }
     });
@@ -69,6 +90,7 @@ export class EditSectionComponent implements OnInit {
     this.feedItem.logo = this.formContent.value[0].logo;
     this.feedItem.name = this.formContent.value[0].name;
     this.feedItem.content = this.formContent.value[0].content;
+    this.feedItem.img = this.formContent.value[0].img;
     this.router.navigate(['home']);
   }
 

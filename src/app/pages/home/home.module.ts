@@ -19,7 +19,6 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { AuthModule } from 'src/app/auth/auth.module';
 
-
 @NgModule({
   declarations: [
     CommentComponent,
@@ -35,7 +34,7 @@ import { AuthModule } from 'src/app/auth/auth.module';
     EditSectionComponent,
     UsernameComponent,
     RedditComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
@@ -43,7 +42,7 @@ import { AuthModule } from 'src/app/auth/auth.module';
     ReactiveFormsModule,
     SharedcomponentModule,
     HomeRoutingModule,
-    AuthModule
+    AuthModule,
   ],
 })
 export class HomeModule {}

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { routesComponent, routesPath } from 'src/app/shared/constants/route-constants';
-import { ManageFeedsComponent } from './manage-feeds/manage-feeds.component';
 
 const routes: Routes = [
   {
@@ -11,7 +10,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'manage-feeds',
+    path: routesPath.MANAGE_FEEDS,
     component: routesComponent.MANAGE_FEEDS_COMPONENT,
   },
 ];

@@ -11,7 +11,7 @@
                         <div class="error-logo"
                             *ngIf="getControl(i, 'logo')?.invalid && getControl(i, 'logo')?.touched">
                             <span *ngIf="getControl(i, 'logo')?.hasError('maxlength')">
-                                *Invalid logo
+                                *There should be only one letter
                             </span>
 
                             <span *ngIf="getControl(i, 'logo')?.hasError('required')">
@@ -41,9 +41,9 @@
                         <label>Body</label>
                         <input type="text" formControlName="content" class="input-value">
                         <div class="error-body"
-                            *ngIf="getControl(i, 'body')?.invalid && getControl(i, 'body')?.touched">
+                            *ngIf="getControl(i, 'content')?.invalid && getControl(i, 'content')?.touched">
 
-                            <span *ngIf="getControl(i, 'body')?.hasError('required')">
+                            <span *ngIf="getControl(i, 'content')?.hasError('required')">
                                 *Body is required
                             </span>
 

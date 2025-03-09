@@ -31,6 +31,9 @@ export class ManageFeedsComponent implements OnInit {
     {
       img: '../../../assets/images/onepiece.jpeg',
     },
+    {
+      img: '../../../assets/images/zoro.jpg',
+    },
   ];
 
   constructor(
@@ -63,7 +66,7 @@ export class ManageFeedsComponent implements OnInit {
   onManage() {
     if (this.manageFeedsForm.invalid) {
       this.manageFeedsForm.markAllAsTouched();
-      this.snackBar.openCustomeSnackBar(
+      this.snackBar.openCustomSnackBar(
         'report_problem',
         'Wrong Credentials',
         'X',
@@ -74,7 +77,7 @@ export class ManageFeedsComponent implements OnInit {
 
     this.formFeedService.manageContent(this.formContent.value);
     this.router.navigate(['/home']);
-    this.snackBar.openCustomeSnackBar(
+    this.snackBar.openCustomSnackBar(
       'report_problem',
       'Feeds Added',
       'X',

@@ -9,9 +9,10 @@
         *Username is required
       </mat-error>
 
-      <mat-error *ngIf="getControl('username')?.hasError('username')">
-        *Please enter a valid username
+      <mat-error *ngIf="getControl('username')?.hasError('invalidName')">
+        *First Name should be Capital
       </mat-error>
+
     </mat-form-field>
 
 
@@ -24,7 +25,7 @@
       </mat-error>
 
       <mat-error *ngIf="getControl('email')?.hasError('invalidEmail') && getControl('email')?.touched">
-        *Please enter a valid  email
+        *Please enter a valid email
       </mat-error>
     </mat-form-field>
 
@@ -54,17 +55,17 @@
     </div>
 
 
-  <mat-form-field>
-    <mat-label>Select a Occupation</mat-label>
-    <mat-select formControlName="occupations">
-      <mat-option *ngFor="let occupation of occupations" [value]="occupation.value">
-        {{ occupation.slug }}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="getControl('occupations')?.hasError('required')" >
-      *Please select an occupation
-    </mat-error>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select a Occupation</mat-label>
+      <mat-select formControlName="occupations">
+        <mat-option *ngFor="let occupation of occupations" [value]="occupation.value">
+          {{ occupation.slug }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="getControl('occupations')?.hasError('required')">
+        *Please select an occupation
+      </mat-error>
+    </mat-form-field>
 
 
     <div class="register-button">

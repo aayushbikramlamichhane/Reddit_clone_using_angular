@@ -3,14 +3,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CustomSnackbarComponent } from '../components/custom-snackbar/custom-snackbar.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SnackbarService {
+  constructor(private _snackbar: MatSnackBar) {}
 
-  constructor(private _snackbar: MatSnackBar) { }
-
-
-  openCustomeSnackBar(icon: string, message: string, action: string, type: string){
+  openCustomSnackBar(
+    icon: string,
+    message: string,
+    action: string,
+    type: string
+  ) {
     this._snackbar.openFromComponent(CustomSnackbarComponent, {
       data: {
         class: type,
@@ -24,4 +27,7 @@ export class SnackbarService {
       horizontalPosition: 'end',
     });
   }
+
+
+
 }

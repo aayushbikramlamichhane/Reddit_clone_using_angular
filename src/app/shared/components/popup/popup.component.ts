@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { FeedsApiServiceService } from 'src/app/pages/home/feeds/services/feeds-api-service.service';
 
 @Component({
   selector: 'app-popup',
@@ -13,11 +12,10 @@ export class PopupComponent {
   @Input() displayContent: boolean[] = [];
   @Input() displayPopup: boolean[] = [];
 
-  // feed?: FeedData[] = FEED_DATA;
+  
 
   constructor(
     private router: Router,
-    private feedService: FeedsApiServiceService
   ) {}
 
   ngOnInit(): void {}

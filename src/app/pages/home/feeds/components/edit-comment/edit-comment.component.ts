@@ -10,8 +10,8 @@ import { FeedData } from 'src/app/shared/models/feed-data';
 export class EditCommentComponent {
   @Input() item!: FeedData;
   @Input() i!: number;
+  @Input() hiddenComments: boolean[] = [];
 
-  hiddenComments: boolean[] = [];
   commentText: string = '';
   feeds: FeedData[] = FEED_DATA;
 
@@ -37,7 +37,6 @@ export class EditCommentComponent {
   }
 
   onDelete(i: number, c: number) {
-    console.log('delete');
     this.feeds[i]?.comment.splice(c, 1);
     this.feeds[i].commentCount -= 1;
   }

@@ -1,11 +1,14 @@
-import { Routes } from "@angular/router";
-import { routesComponent, routesPath } from "./shared/constants/route-constants";
-import { authGuard } from "./shared/guards/auth-guards.guard";
+import { Routes } from '@angular/router';
+import {
+  routesComponent,
+  routesPath,
+} from './shared/constants/route-constants';
+import { authGuard } from './shared/guards/auth-guards.guard';
 
 export const routes: Routes = [
   {
     path: routesPath.LOGIN,
-    loadChildren: () =>
+    loadChildren: () => 
       import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
@@ -35,6 +38,6 @@ export const routes: Routes = [
   },
   {
     path: routesPath.PAGE_NOT_FOUND,
-    component: routesComponent.PAGE_NOT_FOUND_COMPONENT
-  }
+    component: routesComponent.PAGE_NOT_FOUND_COMPONENT,
+  },
 ];

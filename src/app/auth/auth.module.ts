@@ -7,8 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SharedcomponentModule } from 'src/app/shared/sharedcomponent.module';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { LogoutComponent } from './logout/logout.component';
-
 
 
 @NgModule({
@@ -16,7 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
     LoginComponent,
     ImageComponent,
     LayoutComponent,
-    CreateUserComponent
+    CreateUserComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +23,5 @@ import { LogoutComponent } from './logout/logout.component';
     AuthRoutingModule,
     SharedcomponentModule,
   ],
-  exports: []
 })
-export class AuthModule { }
+export class AuthModule {}

@@ -1,7 +1,11 @@
 @import '../../../../assets/scss/display';
 
 .popup-component{
-    @include flex-column(column, 5px);
+    @include flex-column(row, 5px);
     position: absolute;
     right: 0;
+    .edit-section,
+    .delete-section{
+        width: 100px;
+    }
 }

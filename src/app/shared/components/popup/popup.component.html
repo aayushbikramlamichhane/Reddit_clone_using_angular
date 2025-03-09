@@ -1,9 +1,19 @@
 <div class="popup-component">
-    <app-button styles="primary"  (onClick)="editFeed()">
-        Edit
-    </app-button>
+    <div class="edit-section">
+        <app-button
+            styles="primary" 
+            (onClick)="editFeed()"
+        >
+            Edit
+        </app-button>
+    </div>
     
-    <app-button styles="fourth"  (onClick)="deleteFeed(i)">
-        Delete
-    </app-button>
+    <div class="delete-section">
+        <app-button 
+            styles="fourth" 
+            (onClick)="deleteFeed(i)"
+        >
+            Delete
+        </app-button>
+    </div>
 </div>

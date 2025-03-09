@@ -8,4 +8,6 @@ import { FeedData } from 'src/app/shared/models/feed-data';
 })
 export class FeedItemComponent {
   @Input() item!: FeedData;
+  @Input() blurContent: boolean[] = [];
+  @Input() i !: number;
 }

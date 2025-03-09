@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() type: any = '';
-  @Input() styles: 'primary' | 'secondary' | 'third' | 'fourth'  = 'primary';
+  @Input() styles: 'primary' | 'secondary' | 'third' | 'fourth'   = 'primary';
   @Input() isDisabled: boolean = false;
   @Output() onClick = new EventEmitter<boolean>();
 

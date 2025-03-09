@@ -17,6 +17,7 @@ import { CustomSnackbarComponent } from './components/custom-snackbar/custom-sna
 
 
 
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -31,7 +32,11 @@ import { CustomSnackbarComponent } from './components/custom-snackbar/custom-sna
     PageNotFoundComponent,
     CustomSnackbarComponent,
   ],
-  imports: [CommonModule, FormsModule, MatModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatModule,
+  ],
   exports: [
     ButtonComponent,
     DeleteComponentComponent,
