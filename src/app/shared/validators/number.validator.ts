@@ -5,9 +5,6 @@ export function numberValidator(): ValidatorFn{
         if (!control.value) {
           return null;
         }
-
- 
         return parseInt(control.value) ? null : { invalidNumber: true };
-
     }
 }

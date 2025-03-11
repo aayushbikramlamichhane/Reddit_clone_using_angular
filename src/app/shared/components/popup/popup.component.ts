@@ -18,7 +18,6 @@ export class PopupComponent {
     private router: Router,
   ) {}
 
-  ngOnInit(): void {}
 
   deleteFeed(i: number) {
     this.displayContent[i] = !this.displayContent[i];

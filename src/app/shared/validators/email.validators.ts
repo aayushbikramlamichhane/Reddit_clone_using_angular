@@ -7,10 +7,10 @@ export function customEmailValidator(): ValidatorFn {
         }
 
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const email = emailRegex.test(control.value);
+        const email = emailRegex.test(control.value.trim());
 
-        return email
-            ?  null  
-            : { invalidEmail: true };
+        return !email
+            ? { invalidEmail: true }  
+            : null
     };
 }

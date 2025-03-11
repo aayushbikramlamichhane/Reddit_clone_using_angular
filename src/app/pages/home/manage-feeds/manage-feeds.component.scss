@@ -24,10 +24,7 @@
 
         .form-control {
           @include flex-column(column, 2px);
-          .error-logo,
-          .error-name,
-          .error-body,
-          .error-number {
+          .error-message{
             color: red;
           }
 

@@ -10,7 +10,8 @@ import { AuthServiceService } from './shared/services/auth-service.service';
 export class AppComponent {
   title = 'pro';
 
-  constructor(public authServiceService: AuthServiceService,
+  constructor(
+    public authServiceService: AuthServiceService,
     public router: Router
   ) { }
 

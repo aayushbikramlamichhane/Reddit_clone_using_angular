@@ -5,12 +5,11 @@ export function nameValidator(): ValidatorFn {
     if (!control.value) {
       return null;
     }
-
-    const name = control.value.trim();
+    // const name = control.value.trim();
     const nameRegex = /^[A-Z]/;
-    if (!nameRegex.test(name)) {
-      return { invalidName: true };
-    }
-    return null;
+    const name = nameRegex.test(control.value.trim());
+    return !name 
+        ? { invalidName: true } 
+        : null
   };
 }

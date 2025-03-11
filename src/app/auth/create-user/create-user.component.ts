@@ -60,7 +60,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   onCreate() {
-    console.log(this.registerFormGroup?.value?.username);
+    console.log(this.registerFormGroup?.value);
     if (this.registerFormGroup.invalid) {
       this.snackBar.openCustomSnackBar(
         'report_problem',

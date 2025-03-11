@@ -5,26 +5,27 @@
             <div formArrayName="content">
                 <div *ngFor="let item of formContent.controls; let i = index;" [formGroupName]="i" class="form-group">
                     <p>Form no: {{ i + 1 }}</p>
+
                     <div class="form-control">
                         <label for="logo">Logo</label>
                         <input type="text" formControlName="logo" class="input-value">
-                        <div class="error-logo"
+
+                        <div class="error-message"
                             *ngIf="getControl(i, 'logo')?.invalid && getControl(i, 'logo')?.touched">
                             <span *ngIf="getControl(i, 'logo')?.hasError('maxlength')">
                                 *There should be only one letter
                             </span>
-
                             <span *ngIf="getControl(i, 'logo')?.hasError('required')">
                                 *Logo is required
                             </span>
-
-
                         </div>
                     </div>
+
                     <div class="form-control">
                         <label>Name</label>
                         <input type="text" formControlName="name" class="input-value">
-                        <div class="error-name"
+
+                        <div class="error-message"
                             *ngIf="getControl(i, 'name')?.invalid && getControl(i, 'name')?.touched">
                             <span *ngIf="getControl(i, 'name')?.hasError('maxLength')">
                                 *Name should not exceed 50 characters.
@@ -40,7 +41,7 @@
                     <div class="form-control">
                         <label>Body</label>
                         <input type="text" formControlName="content" class="input-value">
-                        <div class="error-body"
+                        <div class="error-message"
                             *ngIf="getControl(i, 'content')?.invalid && getControl(i, 'content')?.touched">
 
                             <span *ngIf="getControl(i, 'content')?.hasError('required')">
@@ -51,13 +52,11 @@
                     </div>
 
                     <div class="form-control">
-                        <label for="">Image</label>
+                        <label for="image">Image</label>
                         <select formControlName="img" class="select-image">
-
                             <ng-container *ngFor="let image of images">
                                 <option [value]="image.img">{{image.img}}</option>
                             </ng-container>
-
                         </select>
                     </div>
                 </div>
@@ -71,7 +70,6 @@
                     Add Feeds
                 </app-button>
             </div>
-
         </div>
     </form>
 </div>

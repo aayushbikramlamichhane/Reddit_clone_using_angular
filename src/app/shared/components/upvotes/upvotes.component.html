@@ -1,22 +1,26 @@
 <div class="upvote-container" [ngStyle]="{
-        backgroundColor: 
-        upArrow  ?
-        'red' : 
-        (downArrow ? 
-        'blue' :
-        '')
-    }">
-
-    <i class="fa-solid fa-arrow-up comment-up" id="arrow-up" (click)="upvoteUp()"
-        [ngStyle]="{color: upArrow? 'white':''}">
+        backgroundColor: upArrow  ? 'red' : 
+        (downArrow ? 'blue' : '')}"
+>
+    <i 
+        class="fa-solid fa-arrow-up comment-up" 
+        id="arrow-up" 
+        (click)="upvoteUp()"
+        [ngStyle]="{color: upArrow? 'white':''}"
+    >
     </i>
 
-    <span class="comment-span" id="arrow-span">
+    <span 
+        class="comment-span" 
+        id="arrow-span"
+    >
         {{upvoteCount}}
     </span>
 
-    <i class='fas fa-arrow-down
-    comment-down' id="arrow-down" (click)="upvoteDown()" [ngStyle]="{color: downArrow? 'white':''}">
+    <i 
+        class='fas fa-arrow-down comment-down' 
+        id="arrow-down" (click)="upvoteDown()" 
+        [ngStyle]="{color: downArrow? 'white':''}"
+    >
     </i>
-
 </div>

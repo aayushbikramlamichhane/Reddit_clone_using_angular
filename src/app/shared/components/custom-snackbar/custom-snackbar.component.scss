@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/flex";
+
 .cus-snackbar {
   display: flex;
   align-items: center;
@@ -10,9 +12,7 @@
   }
 
   .mat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex;
     font-size: 1.25rem;
     height: 2rem;
     width: 2rem;

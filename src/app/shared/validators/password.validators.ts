@@ -9,8 +9,10 @@ export function customPasswordValidator(): ValidatorFn {
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}/;
 
-    const passwordMatched = passwordRegex.test(control.value);
+    const passwordMatched = passwordRegex.test(control.value.trim());
 
-    return !passwordMatched ? { invalidPassword: true } : null;
+    return !passwordMatched 
+      ? { invalidPassword: true } 
+      : null;
   };
 }

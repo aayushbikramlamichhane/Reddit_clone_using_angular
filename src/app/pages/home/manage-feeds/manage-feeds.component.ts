@@ -34,6 +34,9 @@ export class ManageFeedsComponent implements OnInit {
     {
       img: '../../../assets/images/zoro.jpg',
     },
+    {
+      img: '../../../assets/images/mask.jpg',
+    },
   ];
 
   constructor(

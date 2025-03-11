@@ -31,8 +31,11 @@ export class EditSectionComponent implements OnInit {
       img: '../../../assets/images/onepiece.jpeg',
     },
     {
-      img: '../../../assets/images/zoro.jpg'
-    }
+      img: '../../../assets/images/zoro.jpg',
+    },
+    {
+      img: '../../../assets/images/mask.jpg',
+    },
   ];
 
   constructor(
@@ -76,7 +79,7 @@ export class EditSectionComponent implements OnInit {
             logo: this.feedItem?.logo,
             name: this.feedItem?.name,
             content: this.feedItem?.content,
-            img: this.feedItem?.img
+            img: this.feedItem?.img,
           },
         ]);
       }

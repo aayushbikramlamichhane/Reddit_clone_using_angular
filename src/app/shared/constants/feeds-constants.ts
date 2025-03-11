@@ -76,7 +76,7 @@ export const FEED_DATA: FeedData[] = [
     logo: 'M',
     name: 'Maskman',
     content: 'No one cared until I started wearing mask',
-    img: '../../../assets/images/pexels-photo-1097456 (1).jpg',
+    img: '../../../assets/images/mask.jpg',
     upvoteCount: 300,
     commentCount: 0,
     comment: [],
