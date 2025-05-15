@@ -8,11 +8,13 @@ import {
 
 import { inject } from '@angular/core';
 import { loggedIn } from '../storage/local-storage';
+import { AuthServiceService } from '../services/auth-service.service';
 
 export const authGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
+  // const authService = inject(AuthServiceService)
   const router: Router = inject(Router);
   const protectedRoutes: string[] = ['/home', '/manage-feeds'];
 
@@ -20,6 +22,8 @@ export const authGuard: CanActivateFn = (
     router.navigate(['/']);
     return false; 
   }
-
-  return true; 
+  // if (authService.checkIfLoggedIn) {
+    return true;
+  // }else{
+  // return false; }
 };

@@ -33,7 +33,7 @@
               <div class="error-password" *ngIf="getControl('password')?.invalid && getControl('password')?.touched">
 
                 <span *ngIf="getControl('password')?.hasError('invalidPassword') && getControl('password')?.touched">
-                  *Password is weak as you are
+                  *Invalid Password
                 </span>
 
                 <span *ngIf="getControl('password')?.hasError('required')">
